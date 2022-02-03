@@ -2,7 +2,7 @@ import React from "react";
 import MyPhoto from "../Images/image.jpg";
 import { icons } from "../utils/icons";
 
-function Aboutus({ setAboutme }) {
+function Aboutus() {
   return (
     <div className="mt-32" id="about">
       <div className="flex">
@@ -33,10 +33,10 @@ function Aboutus({ setAboutme }) {
             {icons.map((icon) => (
               <div className="flex mb-2" key={icon.url}>
                 <img src={icon.url} alt={icon.desc} className="w-5 h-5" />
-                <span classname="font-bold ml-2 text-sm">{icon.desc}</span>
+                <span className="font-bold ml-2 text-sm">{icon.desc}</span>
               </div>
             ))}
-            <div class="flex">
+            <div className="flex">
               <span
                 className="iconify tailwind"
                 data-icon="simple-icons:tailwindcss"

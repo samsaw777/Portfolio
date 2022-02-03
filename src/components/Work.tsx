@@ -75,13 +75,13 @@ const Work = () => {
                 <p className="text-secondColor m-0">
                   <span className="text-greenTextColor font-bold mr-2">3.</span>
                   Added a feature to
-                  <sapn className="text-greenTextColor font-bold mx-1">
+                  <span className="text-greenTextColor font-bold mx-1">
                     extract information
-                  </sapn>
+                  </span>
                   from the given
-                  <sapn className="text-greenTextColor font-bold mx-1">
+                  <span className="text-greenTextColor font-bold mx-1">
                     url
-                  </sapn>
+                  </span>
                   .
                 </p>
               </div>
