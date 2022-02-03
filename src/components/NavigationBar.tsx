@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import "./navigation.css";
-function NavigationBar({ aboutme, contact, project }) {
+function NavigationBar({ aboutme, contact, project }: any) {
   console.log(aboutme, contact, project);
   const [showacitve, setShowActive] = useState(false);
   const menuItems = [

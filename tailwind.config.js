@@ -56,6 +56,7 @@ const colors = {
   greenTextColor: "#64ffda",
   secondColor: "#8892b0",
   sliderColor: "#1D2127",
+  redColor: "#EF294D",
 };
 
 module.exports = {

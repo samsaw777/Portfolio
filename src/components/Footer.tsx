@@ -8,25 +8,25 @@ const Footer = () => {
           href="https://www.linkedin.com/in/sameep-sawant/"
           className="text-2xl mb-2 text-secondColor cursor-pointer mr-3"
         >
-          <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+          <i className="fa fa-linkedin-square" aria-hidden="true"></i>
         </a>
         <a
           href="https://github.com/samsaw777"
           className="text-2xl mb-2 text-secondColor  cursor-pointer mr-3"
         >
-          <i class="fa fa-github" aria-hidden="true"></i>
+          <i className="fa fa-github" aria-hidden="true"></i>
         </a>
         <a
           href="https://twitter.com/SameepSawant?s=08"
           className="text-2xl mb-2 text-secondColor  cursor-pointer mr-3"
         >
-          <i class="fa fa-twitter" aria-hidden="true"></i>
+          <i className="fa fa-twitter" aria-hidden="true"></i>
         </a>
         <a
           href="https://www.instagram.com/_samsaw_777/"
           className="text-2xl mb-2 text-secondColor  cursor-pointer mr-3"
         >
-          <i class="fa fa-instagram" aria-hidden="true"></i>
+          <i className="fa fa-instagram" aria-hidden="true"></i>
         </a>
       </div>
       <div className="block text-center text-secondColor text-md font-black">
