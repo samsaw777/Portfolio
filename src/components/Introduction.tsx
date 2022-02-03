@@ -136,6 +136,7 @@ function Introduction() {
             );
           })}
         </motion.span>
+
         {/* <span className="cursor-pointer">
           {Name.split("").map((letter: string, key: number) => {
             if (letter !== "S") {
