@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <div className="block pt-32 mb-5" id="contact">
-      <div className="flex 2xl:hidden xl:hidden lg:hidden md:hidden ml-30 justify-center">
+      <div className="flex 2xl:hidden xl:hidden lg:hidden md:hidden items-center justify-center w-full">
         <a
           href="https://www.linkedin.com/in/sameep-sawant/"
           className="text-2xl mb-2 text-secondColor cursor-pointer mr-3"
