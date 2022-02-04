@@ -7,9 +7,9 @@ function Aboutus() {
     <div className="mt-32" id="about">
       <div className="flex">
         <span className="text-2xl font-black text-white">
-          <span className="text-redColor mr-2">1.</span>About Me
+          <span className="text-red-500 mr-2">1.</span>About Me
         </span>
-        <div className="border-t-2 border-greenTextColor w-16 2xl:w-72 xl:w-72 lg:w-72 md:w-72 sm:w-32 h-1 my-auto ml-3 border-opacity-20"></div>
+        <div className="border-t-2 border-greenTextColor w-16 2xl:w-72 xl:w-72 lg:w-72 md:w-72 sm:w-32 h-1  my-auto ml-3 border-opacity-20"></div>
       </div>
       <div className="relative flex 2xl:flex-row xl:flex-row lg:flex-row  flex-col-reverse">
         <div className="2xl:w-3/5 xl:w-3/5 lg:w-3/5 w-full mt-4">

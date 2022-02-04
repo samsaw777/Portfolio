@@ -20,13 +20,13 @@ function Blogs() {
   return (
     <div className="block pt-32 2xl:mx-20">
       <div className="flex">
-        <div className="2xl:text-2xl xl:text-2xl lg:text-2xl md:text-2xl text-2xl text-greenTextColor font-black mr-2">
+        <div className="2xl:text-2xl xl:text-2xl lg:text-2xl md:text-2xl text-2xl text-redColor font-black mr-2">
           4.
         </div>
         <div className="2xl:text-2xl xl:text-2xl lg:text-2xl md:text-2xl text-2xl text-white font-black">
           Blogs Written
         </div>
-        <div className="border-t-2 border-secondColor w-16 2xl:w-72 xl:w-72 lg:w-72 md:w-72 sm:w-32 h-1 my-auto ml-3 border-opacity-20"></div>
+        <div className="border-t-2 border-greenTextColor w-16 2xl:w-72 xl:w-72 lg:w-72 md:w-72 sm:w-32 h-1 my-auto ml-3 border-opacity-20"></div>
       </div>
       <div className="grid grid-cols-1 2xl:grid-cols-2 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 gap-2 mt-5 mb-10">
         {element.map((ele) => (

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 const Work = () => {
   const [activeState, setActiveState] = useState("noggin");
@@ -7,12 +7,12 @@ const Work = () => {
     <div className="pt-32 2xl:ml-32 xl:ml-32 lg:ml-32 " id="experience">
       <div className="flex">
         <span className="text-white 2xl:text-2xl xl:text-2xl lg:text-2xl md:text-2xl text-2xl font-black">
-          <span className="text-greenTextColor font-black2xl:text-2xl xl:text-2xl lg:text-2xl md:text-2xl text-2xl mr-2">
+          <span className="text-red-500 font-black2xl:text-2xl xl:text-2xl lg:text-2xl md:text-2xl text-2xl mr-2">
             2.
           </span>
           Where I've Worked
         </span>
-        <div className="border-t-2 border-secondColor w-16 2xl:w-72 xl:w-72 lg:w-72 md:w-72 sm:w-32 h-1 my-auto ml-3 border-opacity-20"></div>
+        <div className="border-t-2 border-greenTextColor w-16 2xl:w-72 xl:w-72 lg:w-72 md:w-72 sm:w-32 h-1 my-auto ml-3 border-opacity-20"></div>
       </div>
       <div className="flex mt-10 flex-col 2xl:flex-row xl:flex-row lg:flex-row md:flex-row">
         <div className="flex 2xl:flex-col xl:flex-col lg:flex-col md:flex-col mx-auto 2xl:mx-0 xl:mx-0 lg:mx-0  ">

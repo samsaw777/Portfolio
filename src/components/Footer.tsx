@@ -30,7 +30,13 @@ const Footer = () => {
         </a>
       </div>
       <div className="block text-center text-secondColor text-md font-black">
-        <div>Designed & Build by Sameep Sawant.</div>
+        <div>
+          Designed & Build by{" "}
+          <span className="text-greenTextColor">
+            <span className="text-red-500">S</span>ameep{" "}
+            <span className="text-red-500">S</span>awant.
+          </span>
+        </div>
       </div>
     </div>
   );

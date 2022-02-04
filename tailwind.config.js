@@ -68,6 +68,9 @@ module.exports = {
       backgroundImage: {
         remote: 'url("../src/Images/remote.png")',
       },
+      inset: {
+        sLetter: "634px",
+      },
       height: {
         viewHeight: "100vh",
         introductionHeight: "90vh",
