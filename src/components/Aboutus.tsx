@@ -1,6 +1,7 @@
 import React from "react";
 import MyPhoto from "../Images/image.jpg";
 import { icons } from "../utils/icons";
+import { motion } from "framer-motion";
 
 function Aboutus() {
   return (
@@ -27,7 +28,11 @@ function Aboutus() {
             that covers cool feature like Chating, Sharing and much more.
           </p>
           <p className="text-lg">
-            Here are a few technologies I've been working with recently.
+            Here are a few{" "}
+            <span className="font-bold text-xl text-greenTextColor underline">
+              Technologies
+            </span>{" "}
+            I've been working with recently.
           </p>
           <div className="grid grid-cols-2 mt-3 text-center">
             {icons.map((icon) => (
