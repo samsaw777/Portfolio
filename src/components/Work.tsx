@@ -56,7 +56,7 @@ const Work = () => {
               </div>
               <div className="block">
                 <span className="text-secondColor text-md">
-                  June 2021 - Present
+                  June 2021 - Dec 2021
                 </span>
               </div>
               <div className="block text-lg">
