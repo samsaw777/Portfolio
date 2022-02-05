@@ -15,6 +15,12 @@ const element = [
       "This blog explains how I used Redis to reduce the cost for Noggin.",
     url: "https://blog.noggin.so/i-improved-the-performance-and-reduced-costs-for-noggin-using-redis-heres-how",
   },
+  {
+    name: "Hello World in Next.js",
+    subject:
+      "This blogs explains the advantages of next.js over react and also explains how to setup next.js project with folder structure.",
+    url: "https://sameepsawant.hashnode.dev/nextjs-getting-started",
+  },
 ];
 function Blogs() {
   return (
