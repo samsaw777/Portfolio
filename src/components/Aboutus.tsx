@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import MyPhoto from "../Images/image.jpg";
 import { icons } from "../utils/icons";
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation, Variants } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 function Aboutus() {
@@ -12,16 +12,30 @@ function Aboutus() {
 
   const controls = useAnimation();
   const imageAnimation = useAnimation();
+  const skillsAnimation = useAnimation();
   useEffect(() => {
     console.log(inView);
     if (inView) {
       controls.start({
         x: 0,
-        // transition: { type: "spring", duration: 1, bounce: 0.3 },
+        transition: { type: "spring", duration: 1, bounce: 0.3 },
       });
       imageAnimation.start({
         x: 0,
-        // transition: { type: "spring", duration: 1, bounce: 0.3 },
+        transition: {
+          type: "spring",
+          duration: 1,
+          bounce: 0.3,
+        },
+      });
+      skillsAnimation.start({
+        y: 0,
+        transition: {
+          type: "spring",
+          duration: 1,
+          bounce: 0.3,
+          delayChildren: 0.2,
+        },
       });
     }
 
@@ -31,6 +45,9 @@ function Aboutus() {
       });
       imageAnimation.start({
         x: "100vw",
+      });
+      skillsAnimation.start({
+        y: "-100vw",
       });
     }
   }, [inView]);
@@ -70,10 +87,14 @@ function Aboutus() {
           </p>
           <div className="grid grid-cols-2 mt-3 text-center">
             {icons.map((icon) => (
-              <div className="flex mb-2" key={icon.url}>
+              <motion.div
+                // animate={inView && skillsAnimation}
+                className="flex mb-2"
+                key={icon.url}
+              >
                 <img src={icon.url} alt={icon.desc} className="w-7 h-7" />
                 <span className="font-bold ml-2 text-md mt-1">{icon.desc}</span>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
