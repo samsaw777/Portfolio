@@ -1,15 +1,42 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MyPhoto from "../Images/image.jpg";
 import { icons } from "../utils/icons";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 function Aboutus() {
+  const [ref, inView] = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
+
+  const animation = useAnimation();
+
+  useEffect(() => {
+    console.log(inView);
+    if (inView) {
+      animation.start({
+        x: 0,
+        // transition: { type: "spring", duration: 1, bounce: 0.3 },
+      });
+
+      if (!inView) {
+        animation.start({
+          x: "-100vw",
+        });
+      }
+    }
+  }, [inView]);
+
   return (
-    <div className="mt-32" id="about">
+    <div className="mt-32" id="about" ref={ref}>
       <div className="flex">
-        <span className="text-2xl font-black text-white">
+        <motion.span
+          animate={animation}
+          className="text-2xl font-black text-white"
+        >
           <span className="text-red-500 mr-2">1.</span>About Me
-        </span>
+        </motion.span>
         <div className="border-t-2 border-greenTextColor w-16 2xl:w-72 xl:w-72 lg:w-72 md:w-72 sm:w-32 h-1  my-auto ml-3 border-opacity-20"></div>
       </div>
       <div className="relative flex 2xl:flex-row xl:flex-row lg:flex-row  flex-col-reverse">
@@ -44,7 +71,8 @@ function Aboutus() {
           </div>
         </div>
 
-        <img
+        <motion.img
+          animate={animation}
           src={MyPhoto}
           className="w-72 h-72 rounded-full mx-auto mt-10"
           alt="Sameep Sawant"
