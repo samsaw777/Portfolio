@@ -13,6 +13,7 @@ function Aboutus() {
   const controls = useAnimation();
   const imageAnimation = useAnimation();
   const skillsAnimation = useAnimation();
+  const contentAnimation = useAnimation();
   useEffect(() => {
     console.log(inView);
     if (inView) {
@@ -22,20 +23,23 @@ function Aboutus() {
       });
       imageAnimation.start({
         x: 0,
-        transition: {
-          type: "spring",
-          duration: 1,
-          bounce: 0.3,
-        },
+        transition: { type: "spring", duration: 1, bounce: 0.3 },
       });
+
       skillsAnimation.start({
+        // opacity: 1,
+        // transition: { duration: 3, delay: 0.5 },
         y: 0,
         transition: {
           type: "spring",
           duration: 1,
           bounce: 0.3,
-          delayChildren: 0.2,
+          delay: 0.5,
         },
+      });
+      contentAnimation.start({
+        x: 0,
+        transition: { type: "spring", duration: 1, bounce: 0.3, delay: 0.3 },
       });
     }
 
@@ -47,7 +51,12 @@ function Aboutus() {
         x: "100vw",
       });
       skillsAnimation.start({
+        // opacity: 0,
         y: "-100vw",
+      });
+      contentAnimation.start({
+        // opacity: 0,
+        x: "-100vw",
       });
     }
   }, [inView]);
@@ -65,30 +74,37 @@ function Aboutus() {
       </div>
       <div className="relative flex 2xl:flex-row xl:flex-row lg:flex-row  flex-col-reverse">
         <div className="2xl:w-3/5 xl:w-3/5 lg:w-3/5 w-full mt-4">
-          <p className="text-xl pb-4 font-bold text-justify">
+          <motion.p
+            animate={contentAnimation}
+            className="text-xl pb-4 font-bold text-justify"
+          >
             Hii, My name is Sameep and I enjoy creating things that will be
             useful for other on the internet. My interest in web development
             started back in 2018 when I tried to clone some templates available
             on internet.
-          </p>
-          <p className="text-xl pb-4 font-bold text-justify">
+          </motion.p>
+          <motion.p
+            animate={contentAnimation}
+            className="text-xl pb-4 font-bold text-justify
+          "
+          >
             I also recently developed{" "}
             <span className="text-greenTextColor font-bold">
               Web Application
             </span>{" "}
             that covers cool feature like Chating, Sharing and much more.
-          </p>
-          <p className="text-lg">
+          </motion.p>
+          <motion.p animate={contentAnimation} className="text-lg">
             Here are a few{" "}
             <span className="font-bold text-xl text-greenTextColor underline">
               Technologies
             </span>{" "}
             I've been working with recently.
-          </p>
+          </motion.p>
           <div className="grid grid-cols-2 mt-3 text-center">
             {icons.map((icon) => (
               <motion.div
-                // animate={inView && skillsAnimation}
+                animate={skillsAnimation}
                 className="flex mb-2"
                 key={icon.url}
               >
