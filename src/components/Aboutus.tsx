@@ -10,21 +10,28 @@ function Aboutus() {
     triggerOnce: true,
   });
 
-  const animation = useAnimation();
-
+  const controls = useAnimation();
+  const imageAnimation = useAnimation();
   useEffect(() => {
     console.log(inView);
     if (inView) {
-      animation.start({
+      controls.start({
         x: 0,
         // transition: { type: "spring", duration: 1, bounce: 0.3 },
       });
+      imageAnimation.start({
+        x: 0,
+        // transition: { type: "spring", duration: 1, bounce: 0.3 },
+      });
+    }
 
-      if (!inView) {
-        animation.start({
-          x: "-100vw",
-        });
-      }
+    if (!inView) {
+      controls.start({
+        x: "-100vw",
+      });
+      imageAnimation.start({
+        x: "100vw",
+      });
     }
   }, [inView]);
 
@@ -32,7 +39,7 @@ function Aboutus() {
     <div className="mt-32" id="about" ref={ref}>
       <div className="flex">
         <motion.span
-          animate={animation}
+          animate={controls}
           className="text-2xl font-black text-white"
         >
           <span className="text-red-500 mr-2">1.</span>About Me
@@ -72,7 +79,7 @@ function Aboutus() {
         </div>
 
         <motion.img
-          animate={animation}
+          animate={imageAnimation}
           src={MyPhoto}
           className="w-72 h-72 rounded-full mx-auto mt-10"
           alt="Sameep Sawant"
