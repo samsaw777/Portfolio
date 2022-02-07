@@ -9,13 +9,17 @@ const MainProject = () => {
     threshold: 0.1,
     triggerOnce: true,
   });
-
+  const controls = useAnimation();
   const firstProject = useAnimation();
   const secondProject = useAnimation();
 
   useEffect(() => {
     console.log(inView);
     if (inView) {
+      controls.start({
+        x: 0,
+        transition: { type: "spring", duration: 1, bounce: 0.3 },
+      });
       firstProject.start({
         x: 0,
         transition: { type: "spring", duration: 1, bounce: 0.3 },
@@ -27,6 +31,9 @@ const MainProject = () => {
     }
 
     if (!inView) {
+      controls.start({
+        x: "-100vw",
+      });
       firstProject.start({
         x: "-100vw",
       });
@@ -39,14 +46,14 @@ const MainProject = () => {
   return (
     <div className="pt-36 mb-32" id="projects" ref={ref}>
       <div className="flex">
-        <div className="flex">
+        <motion.div className="flex" animate={controls}>
           <span className="text-redColor mr-2 2xl:text-2xl xl:text-2xl lg:text-2xl md:text-2xl text-2xl font-black">
             3.
           </span>
           <span className="text-white 2xl:text-2xl xl:text-2xl lg:text-2xl md:text-2xl text-2xl font-black">
             Some Things I've Built
           </span>
-        </div>
+        </motion.div>
         <div className="border-t-2 border-greenTextColor w-10 2xl:w-72 xl:w-72 lg:w-72 md:w-72 sm:w-32 h-1 my-auto ml-3 border-opacity-20"></div>
       </div>
       <motion.div
