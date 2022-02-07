@@ -26,17 +26,22 @@ function Aboutus() {
         transition: { type: "spring", duration: 1, bounce: 0.3 },
       });
 
-      skillsAnimation.start({
-        // opacity: 1,
-        // transition: { duration: 3, delay: 0.5 },
+      skillsAnimation.start((i) => ({
+        opacity: 1,
         y: 0,
-        transition: {
-          type: "spring",
-          duration: 1,
-          bounce: 0.3,
-          delay: 0.5,
-        },
-      });
+        transition: { delay: i * 0.3 },
+      }));
+      // skillsAnimation.start({
+      //   // opacity: 1,
+      //   // transition: { duration: 3, delay: 0.5 },
+      //   y: 0,
+      //   transition: {
+      //     type: "spring",
+      //     duration: 1,
+      //     bounce: 0.3,
+      //     delay: 0.5,
+      //   },
+      // });
       contentAnimation.start({
         x: 0,
         transition: { type: "spring", duration: 1, bounce: 0.3, delay: 0.3 },
@@ -51,8 +56,8 @@ function Aboutus() {
         x: "100vw",
       });
       skillsAnimation.start({
-        // opacity: 0,
-        y: "-100vw",
+        opacity: 0,
+        y: "100vw",
       });
       contentAnimation.start({
         // opacity: 0,
@@ -102,11 +107,12 @@ function Aboutus() {
             I've been working with recently.
           </motion.p>
           <div className="grid grid-cols-2 mt-3 text-center">
-            {icons.map((icon) => (
+            {icons.map((icon: any, key: any) => (
               <motion.div
                 animate={skillsAnimation}
                 className="flex mb-2"
                 key={icon.url}
+                custom={key}
               >
                 <img src={icon.url} alt={icon.desc} className="w-7 h-7" />
                 <span className="font-bold ml-2 text-md mt-1">{icon.desc}</span>
