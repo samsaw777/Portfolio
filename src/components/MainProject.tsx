@@ -1,11 +1,43 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Remote from "../Images/remote.png";
 import Ganpati from "../Images/shreeganesharts.PNG";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
-
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 const MainProject = () => {
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
+  const firstProject = useAnimation();
+  const secondProject = useAnimation();
+
+  useEffect(() => {
+    console.log(inView);
+    if (inView) {
+      firstProject.start({
+        x: 0,
+        transition: { type: "spring", duration: 1, bounce: 0.3 },
+      });
+      secondProject.start({
+        x: 0,
+        transition: { type: "spring", duration: 1, bounce: 0.3, delay: 0.3 },
+      });
+    }
+
+    if (!inView) {
+      firstProject.start({
+        x: "-100vw",
+      });
+      secondProject.start({
+        x: "100vw",
+      });
+    }
+  }, [inView]);
+
   return (
-    <div className="pt-44 mb-32" id="projects">
+    <div className="pt-36 mb-32" id="projects" ref={ref}>
       <div className="flex">
         <div className="flex">
           <span className="text-redColor mr-2 2xl:text-2xl xl:text-2xl lg:text-2xl md:text-2xl text-2xl font-black">
@@ -17,7 +49,10 @@ const MainProject = () => {
         </div>
         <div className="border-t-2 border-greenTextColor w-10 2xl:w-72 xl:w-72 lg:w-72 md:w-72 sm:w-32 h-1 my-auto ml-3 border-opacity-20"></div>
       </div>
-      <div className="block mt-10  2xl:bg-none xl:bg-none lg:bg-none bg-sliderColor p-5 rounded transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-100 cursor-pointer">
+      <motion.div
+        className="block mt-10  2xl:bg-none xl:bg-none lg:bg-none bg-sliderColor p-5 rounded transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-100 cursor-pointer"
+        animate={firstProject}
+      >
         <div className="flex">
           <img
             src={Remote}
@@ -80,11 +115,14 @@ const MainProject = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* second Project */}
       <div className="block mt-10">
-        <div className="flex 2xl:bg-none xl:bg-none lg:bg-none bg-sliderColor p-5 rounded transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-100 cursor-pointer">
+        <motion.div
+          className="flex 2xl:bg-none xl:bg-none lg:bg-none bg-sliderColor p-5 rounded transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-100 cursor-pointer"
+          animate={secondProject}
+        >
           <div className="block w-full relative ">
             <div className="text-greenTextColor font-bold text-lg">
               Featured Project
@@ -138,7 +176,7 @@ const MainProject = () => {
             alt="Remote First Woke Tracker"
             className="w-iWidth h-iHeight rounded hidden 2xl:block xl:block lg:block xl:w-xlWidth xl:h-xlHeight lg:w-lgWidth lg:h-lgHeight ml-3"
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   );
