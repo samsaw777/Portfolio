@@ -31,7 +31,7 @@ const Footer = () => {
       </div>
       <div className="block text-center text-secondColor text-md font-black">
         <div>
-          Designed and Build by{" "}
+          Designed & Build by{" "}
           <span className="text-greenTextColor">
             <span className="text-red-500">S</span>ameep{" "}
             <span className="text-red-500">S</span>awant.
