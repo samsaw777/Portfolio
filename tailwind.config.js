@@ -74,6 +74,7 @@ module.exports = {
       height: {
         viewHeight: "100vh",
         introductionHeight: "90vh",
+        iconsHeight: "72.6vh",
         iHeight: "343px",
         xlHeight: "300px",
         lgHeight: "200px",

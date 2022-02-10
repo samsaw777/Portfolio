@@ -31,11 +31,12 @@ function NavigationBar({ aboutme, contact, project }: any) {
     },
   ];
 
-  const clickableevent = () => {
+  const clickableevent = (key: string) => {
+    setActiveClass(key);
     setShowActive(!showacitve);
     return false;
   };
-  const [activeclass, setActiveClass] = useState(false);
+  const [activeclass, setActiveClass] = useState<string>("");
   console.log(menuItems);
   return (
     <div className="flex">
@@ -45,14 +46,14 @@ function NavigationBar({ aboutme, contact, project }: any) {
           className="navigation-links"
           style={{ transform: showacitve ? "translateX(0px)" : "" }}
         >
-          {menuItems.map((item) => (
+          {menuItems.map((item: any, key: number) => (
             <li key={item.id} onClick={() => setShowActive(!showacitve)}>
               <a
-                onClick={clickableevent}
+                onClick={() => clickableevent(item.url)}
                 href={`#${item.url}`}
                 className={
-                  activeclass
-                    ? `${item.Aclassname} `
+                  activeclass === item.url
+                    ? "text-greenTextColor font-bold"
                     : " hover:text-greenTextColor"
                 }
               >
