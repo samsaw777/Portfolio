@@ -5,10 +5,27 @@ import LinkIcons from "./LinkIcons";
 import Aboutme from "./Aboutus";
 import Work from "./Work";
 import OtherProjects from "./OtherProjects";
-
+import { motion, Variants } from "framer-motion";
 import MainProject from "./MainProject";
 import Footer from "./Footer";
 import Blog from "./Blogs";
+const fadeIn = (direction: "up" | "down" = "up"): Variants => {
+  return {
+    initial: {
+      y: direction === "up" ? 40 : -60,
+      opacity: 0,
+    },
+    animate: {
+      y: 0,
+      opacity: 1,
+
+      transition: {
+        duration: 0.5,
+        // ease: "easeInOut",
+      },
+    },
+  };
+};
 function LandingPage() {
   const [aboutme, setAboutme] = useState("");
   const [contact, setContact] = useState("");
@@ -37,12 +54,17 @@ function LandingPage() {
             <Blog />
             <Footer />
           </div>
-          <div className="w-sideWidth text-gray-100 2xl:flex xl:flex lg:flex md:flex flex-col hidden justify-end ">
+          <motion.div
+            variants={fadeIn("down")}
+            animate="animate"
+            initial="initial"
+            className="w-sideWidth text-gray-100 2xl:flex xl:flex lg:flex md:flex flex-col hidden justify-end "
+          >
             <span className="text-secondColor mode mx-auto text-lg">
               Sameep . Sawant . 777
             </span>
             <div className="h-32 border-r-2 border-secondColor w-3/6 mt-3"></div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </>
