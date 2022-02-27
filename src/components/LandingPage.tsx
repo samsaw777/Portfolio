@@ -9,6 +9,7 @@ import { motion, Variants } from "framer-motion";
 import MainProject from "./MainProject";
 import Footer from "./Footer";
 import Blog from "./Blogs";
+import FreeLancing from "./FreeLancing";
 const fadeIn = (direction: "up" | "down" = "up"): Variants => {
   return {
     initial: {
@@ -50,6 +51,7 @@ function LandingPage() {
             <Aboutme />
             <Work />
             <MainProject />
+            {/* <FreeLancing /> */}
             <OtherProjects />
             <Blog />
             <Footer />
