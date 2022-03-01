@@ -51,7 +51,7 @@ function LandingPage() {
             <Aboutme />
             <Work />
             <MainProject />
-            {/* <FreeLancing /> */}
+            <FreeLancing />
             <OtherProjects />
             <Blog />
             <Footer />
