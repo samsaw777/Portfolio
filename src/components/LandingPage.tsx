@@ -4,6 +4,7 @@ import IntroductionPage from "./Introduction";
 import LinkIcons from "./LinkIcons";
 import Aboutme from "./Aboutus";
 import Work from "./Work";
+import InProgressProjects from "./Inprogressprojects";
 import OtherProjects from "./OtherProjects";
 import { motion, Variants } from "framer-motion";
 import MainProject from "./MainProject";
@@ -52,6 +53,7 @@ function LandingPage() {
             <Work />
             <MainProject />
             <FreeLancing />
+            <InProgressProjects />
             <OtherProjects />
             <Blog />
             <Footer />
