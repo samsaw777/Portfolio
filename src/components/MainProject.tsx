@@ -113,7 +113,7 @@ const MainProject = () => {
               </span>
             </div>
             <div className="flex 2xl:justify-end xl:justify-end lg:justify-end justify-start mt-3 w-full">
-              <a href="https://github.com/samsaw777/NoteITFRONTEND">
+              <a href="https://github.com/samsaw777/Remote-First-Work-Tracker">
                 <FiGithub className="w-5 h-5 mr-3 cursor-pointer text-white" />
               </a>
               <a href="https://remoteworktracker.netlify.app/">
