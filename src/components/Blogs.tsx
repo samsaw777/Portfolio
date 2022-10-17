@@ -27,7 +27,7 @@ function Blogs() {
     <div className="block pt-32 2xl:mx-20">
       <div className="flex">
         <div className="2xl:text-2xl xl:text-2xl lg:text-2xl md:text-2xl text-2xl text-redColor font-black mr-2">
-          4.
+          5.
         </div>
         <div className="2xl:text-2xl xl:text-2xl lg:text-2xl md:text-2xl text-2xl text-white font-black">
           Blogs Written

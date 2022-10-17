@@ -4,13 +4,14 @@ import IntroductionPage from "./Introduction";
 import LinkIcons from "./LinkIcons";
 import Aboutme from "./Aboutus";
 import Work from "./Work";
-import InProgressProjects from "./Inprogressprojects";
+
 import OtherProjects from "./OtherProjects";
 import { motion, Variants } from "framer-motion";
 import MainProject from "./MainProject";
 import Footer from "./Footer";
 import Blog from "./Blogs";
 import FreeLancing from "./FreeLancing";
+import CurrentProject from "./CurrentProject";
 const fadeIn = (direction: "up" | "down" = "up"): Variants => {
   return {
     initial: {
@@ -51,9 +52,10 @@ function LandingPage() {
             <IntroductionPage />
             <Aboutme />
             <Work />
+            <CurrentProject />
             <MainProject />
             <FreeLancing />
-            <InProgressProjects />
+
             <OtherProjects />
             <Blog />
             <Footer />

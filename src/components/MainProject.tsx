@@ -48,7 +48,7 @@ const MainProject = () => {
       <div className="flex">
         <motion.div className="flex" animate={controls}>
           <span className="text-redColor mr-2 2xl:text-2xl xl:text-2xl lg:text-2xl md:text-2xl text-2xl font-black">
-            3.
+            4.
           </span>
           <span className="text-white 2xl:text-2xl xl:text-2xl lg:text-2xl md:text-2xl text-2xl font-black">
             Some Things I've Built
@@ -78,11 +78,11 @@ const MainProject = () => {
                 Remote First Work tracker is tracking software used to track
                 your daily activities in an organization.
               </div>
-              <div className="text-secondColor flex  justify-start font-bold text-md lg:hidden 2xl:flex xl:flex md:flex ">
+              <div className="text-secondColor flex  justify-start font-bold text-md mt-2 lg:hidden 2xl:flex xl:flex md:flex ">
                 User can create groups and add members in an organization which
                 can track each user progress.
               </div>
-              <div className="text-secondColor font-bold text-md block 2xl:ml-auto xl:ml-auto lg:ml-auto">
+              <div className="text-secondColor font-bold mt-2 text-md block 2xl:ml-auto xl:ml-auto lg:ml-auto">
                 Some Features:-
                 <span className="text-greenTextColor ml-2 font-blod text-md">
                   Google authentication
@@ -142,11 +142,11 @@ const MainProject = () => {
                 Created Ganpati booking website for a client. This website has
                 two panel, user and admin panel.
               </div>
-              <div className="text-secondColor  font-bold text-md lg:hidden 2xl:flex xl:flex md:flex mr-4">
+              <div className="text-secondColor  font-bold text-md mt-2 lg:hidden 2xl:flex xl:flex md:flex mr-4">
                 User can now book a Ganpati Bappa murti directly from this
                 website online.
               </div>
-              <div className="text-secondColor font-bold text-md">
+              <div className="text-secondColor font-bold text-md mt-2">
                 Some Features:-
                 <span className="text-greenTextColor ml-2 font-blod text-md">
                   Google authentication

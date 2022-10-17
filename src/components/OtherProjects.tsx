@@ -4,6 +4,13 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 const Projects = [
   {
+    name: "AirBNB CLone",
+    desc: "Created a Airbnb clone.",
+    stackUsed: ["Next.js", "Tailwindcss"],
+    githubLink: "https://github.com/samsaw777/notes",
+    liveLink: "https://samsawairbnbclone.vercel.app/",
+  },
+  {
     name: "Covid Tracker",
     desc: "Covid tracker is a app where we can see the number of  covid cases throught the world with detailed analysis using statistis and also there is a seperate covid cases number for INDIA.",
     stackUsed: ["React", "React-Bootstrap", "Firebase"],
@@ -104,7 +111,7 @@ const OtherProjects = () => {
     }
   }, [inView]);
   return (
-    <div className="pt-20 2xl:mx-20" ref={ref}>
+    <div className="pt-20" ref={ref}>
       <motion.div className="block text-center" animate={header}>
         {" "}
         <span className="text-white text-2xl w-full font-black">
