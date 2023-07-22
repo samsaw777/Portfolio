@@ -56,20 +56,7 @@ function LandingPage() {
             <CurrentProject />
             <MainProject />
             <FreeLancing />
-            <Job
-              job={{
-                role: "Frontend Developer",
-                companyName: "WatConsult",
-                companyLink: "hello",
-                date: "June 2021 - Dec 2021",
-                workDone: [
-                  "Updated the UI of the app to make it look better.",
-                  "Added the feature where the user input can be Slugified and will be stored in the database.",
-                  "Added a feature toextract informationfrom the givenurl.",
-                ],
-                technologies: ["React", "Node.js", "Tailwindcss"],
-              }}
-            />
+
             <OtherProjects />
             <Blog />
             <Footer />

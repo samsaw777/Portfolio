@@ -42,7 +42,7 @@ const Job: React.FC<Props> = ({
                   key={index}
                 >
                   <span className="text-greenTextColor font-bold mr-2">
-                    {index}.
+                    {index + 1}.
                   </span>
                   <p className="text-secondColor hover:text-secondColor hover:font-normal">
                     {work}
