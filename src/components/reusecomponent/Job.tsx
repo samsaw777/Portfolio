@@ -37,24 +37,30 @@ const Job: React.FC<Props> = ({
           <ul className="block text-lg">
             {workDone?.map((work: string, index: number) => {
               return (
-                <li className="text-secondColor m-0 hover:text-secondColor hover:font-normal flex space-x-2">
+                <span
+                  className="text-secondColor mt-2 text-[16px] m-0 hover:text-secondColor hover:font-normal flex space-x-2"
+                  key={index}
+                >
                   <span className="text-greenTextColor font-bold mr-2">
                     {index}.
                   </span>
                   <p className="text-secondColor hover:text-secondColor hover:font-normal">
                     {work}
                   </p>
-                </li>
+                </span>
               );
             })}
           </ul>
 
-          <ul className="w-full flex space-x-2">
+          <ul className="w-full flex flex-wrap gap-2 mt-2">
             {technologies?.map((technology: string, index: number) => {
               return (
-                <li className="text-greenTextColor hover:text-greenTextColor hover:font-normal cursor-pointer">
+                <span
+                  className="text-greenTextColor hover:text-greenTextColor hover:font-normal cursor-pointer"
+                  key={index}
+                >
                   {technology}
-                </li>
+                </span>
               );
             })}
           </ul>

@@ -1,7 +1,90 @@
 import React, { useState } from "react";
-
+import Tabs from "./reusecomponent/Tabs";
+import Job from "./reusecomponent/Job";
 const Work = () => {
-  const [activeState, setActiveState] = useState("noggin");
+  const [activeState, setActiveState] = useState("Elastik Teams");
+
+  const showJobs = (activeTab: string) => {
+    switch (activeTab) {
+      case "Elastik Teams":
+        return {
+          role: "Software Developpment Engineer",
+          companyName: "Elastik Teams",
+          companyLink: "https://www.elastikteams.com/",
+          date: "Jan 2023 - Present",
+          workDone: [
+            "Implemented a debounce search feature in Elastik, improving user search efficiency by 10%. Integrated it into a company project.",
+            "I developed a React table component with search, sort, and filter options, enhancing the user experience by 5% in a different project.",
+            "I optimized API code by adding try-catch and async-await, increasing error-handling efficiency by 10%.",
+            "Created React components using direflow.io and developed APIs for utilization in a site supporting a company project.",
+          ],
+          technologies: [
+            "ReactJS",
+            "Exppress.js",
+            "Node,js",
+            "Sequelize",
+            "Azure",
+            "Typescript",
+          ],
+        };
+      case "Noggin":
+        return {
+          role: "Frontend Developer Intern",
+          companyName: "Noggin",
+          companyLink: "https://www.noggin.so/",
+          date: "June 2021 - October 2021",
+          workDone: [
+            "Improved application performance significantly by implementing Redis, resulting in a 15% increase in resource fetching speed and optimizing the overall performance.",
+            "I enhanced user experience by updating the project UI, increasing it by 20%.",
+            "Implementing a feature to boost app performance by 25% by adding slugs to links and efficient data fetching.",
+          ],
+          technologies: [
+            "Nextjs",
+            "Typescript",
+            "Nodejs",
+            "Tailwindcss",
+            "Prisma",
+            "GraphQL",
+            "PostgreSQL",
+            "Reddis",
+          ],
+        };
+      case "Wat Consult":
+        return {
+          role: "Frontend Developer Intern",
+          companyName: "Wat Consult",
+          companyLink: "https://www.watconsult.com/",
+          date: "May 2019 - June 2019",
+          workDone: [
+            "During six weeks of internship in wat consult created Responsive websites, google templates.",
+            "Created template websites.",
+            "Created a Quiz with PHP backend.",
+          ],
+          technologies: [
+            "HTML",
+            "CSS",
+            "Node,Javascrippt",
+            "PHP",
+            "Bootstrap",
+            "JQuery",
+          ],
+        };
+
+      default:
+        return {
+          role: "Frontend Developer",
+          companyName: "Elastik Teams",
+          companyLink: "https://elastikteams.com/",
+          date: "Jan 2021 - Present",
+          workDone: [
+            "Developed the frontend of the website using ReactJS, NextJS, TailwindCSS, and Framer Motion.",
+            "Developed the backend of the website using NodeJS, ExpressJS, and MongoDB.",
+            "Developed the admin panel of the website using ReactJS, NextJS, TailwindCSS, and Framer Motion.",
+          ],
+          technologies: ["ReactJS", "Nextjs", "Node,js"],
+        };
+    }
+  };
 
   return (
     <div className="pt-32 2xl:ml-32 xl:ml-32 lg:ml-32 " id="experience">
@@ -14,133 +97,17 @@ const Work = () => {
         </span>
         <div className="border-t-2 border-greenTextColor w-16 2xl:w-72 xl:w-72 lg:w-72 md:w-72 sm:w-32 h-1 my-auto ml-3 border-opacity-20"></div>
       </div>
-      <div className="flex mt-10 flex-col 2xl:flex-row xl:flex-row lg:flex-row md:flex-row">
-        <div className="flex 2xl:flex-col xl:flex-col lg:flex-col md:flex-col mx-auto 2xl:mx-0 xl:mx-0 lg:mx-0  ">
-          <div
-            className={
-              "p-2 cursor-pointer border-t-2 border-secondColor border-opacity-20  hover:bg-greenTextColor hover:bg-opacity-20" +
-              (activeState === "noggin"
-                ? "text-greenTextColor border-t-2 border-greenTextColor border-opacity-100 hover:bg-greenTextColor hover:bg-opacity-20 bg-opacity-10 bg-greenTextColor"
-                : "border-l-2 border-secondColor border-opacity-20 hover:bg-greenTextColor hover:bg-opacity-20")
-            }
-            onClick={() => setActiveState("noggin")}
-          >
-            Noggin
-          </div>
-          <div
-            className={
-              "p-2 cursor-pointer border-t-2 border-secondColor border-opacity-20  hover:bg-greenTextColor hover:bg-opacity-20" +
-              (activeState === "wat"
-                ? "text-greenTextColor border-t-2 border-greenTextColor border-opacity-100 hover:bg-greenTextColor hover:bg-opacity-20 bg-opacity-10 bg-greenTextColor"
-                : "border-l-2 border-secondColor border-opacity-20 hover:bg-greenTextColor hover:bg-opacity-20")
-            }
-            onClick={() => setActiveState("wat")}
-          >
-            Wat Consult
-          </div>
-        </div>
-        <div className="block ml-10">
-          {activeState === "noggin" ? (
-            <div className="block">
-              <div className="pt-2 flex">
-                <span className="text-white text-xl">FrontEnd Developer</span>
-                <span className="text-greenTextColor font-black ml-2 text-xl">
-                  @
-                  <a
-                    href="https://www.noggin.so/"
-                    className="text-greenTextColor font-black ml-2 text-xl hover:text-greenTextColor hover:underline"
-                  >
-                    Noggin
-                  </a>
-                </span>
-              </div>
-              <div className="block">
-                <span className="text-secondColor text-md">
-                  June 2021 - Dec 2021
-                </span>
-              </div>
-              <div className="block text-lg">
-                <p className="text-secondColor m-0">
-                  <span className="text-greenTextColor font-bold mr-2">1.</span>
-                  Updated the UI of the app to make it look better.
-                </p>
-                <p className="text-secondColor m-0">
-                  <span className="text-greenTextColor font-bold mr-2">2.</span>
-                  Added the feature where the user input can be
-                  <span className="text-greenTextColor font-bold mx-1">
-                    Slugified
-                  </span>
-                  and will be stored in the database.
-                </p>
-                <p className="text-secondColor m-0">
-                  <span className="text-greenTextColor font-bold mr-2">3.</span>
-                  Added a feature to
-                  <span className="text-greenTextColor font-bold mx-1">
-                    extract information
-                  </span>
-                  from the given
-                  <span className="text-greenTextColor font-bold mx-1">
-                    url
-                  </span>
-                  .
-                </p>
-              </div>
-            </div>
-          ) : (
-            <div className="block">
-              <div className="pt-2 flex">
-                <span className="text-white text-xl">FrontEnd Developer</span>
-                <span className="text-greenTextColor font-black ml-2 text-xl">
-                  @
-                  <a
-                    href="https://www.watconsult.com/"
-                    className="text-greenTextColor font-black ml-2 text-xl hover:text-greenTextColor hover:underline"
-                  >
-                    Wat Consult
-                  </a>
-                </span>
-              </div>
-              <div className="block">
-                <span className="text-secondColor text-md">
-                  May 2019 - June 2019
-                </span>
-              </div>
-              <div className="block text-lg">
-                <p className="text-secondColor m-0">
-                  <span className="text-greenTextColor font-bold mr-2">1.</span>
-                  During six weeks of internship in wat consult created
-                  <a
-                    href="https://github.com/samsaw777/LucidPhone"
-                    className="text-greenTextColor font-bold mx-1 hover:text-greenTextColor hover:underline"
-                  >
-                    Responsive websites
-                  </a>
-                  , google templates.
-                </p>
-                <p className="text-secondColor m-0">
-                  <span className="text-greenTextColor font-bold mr-2">2.</span>
-                  Created template
-                  <a
-                    href="https://github.com/samsaw777/JungleBook"
-                    className="text-greenTextColor font-bold mx-1 hover:text-greenTextColor hover:underline"
-                  >
-                    websites.
-                  </a>
-                </p>
-                <p className="text-secondColor m-0">
-                  <span className="text-greenTextColor font-bold mr-2">3.</span>
-                  Created a
-                  <a
-                    href="https://github.com/samsaw777/Qizz-HTMl-CSS-JS-PHP-"
-                    className="text-greenTextColor font-bold mx-1 hover:text-greenTextColor hover:underline"
-                  >
-                    Quiz
-                  </a>
-                  with PHP backend. .
-                </p>
-              </div>
-            </div>
-          )}
+      <div className="w-full flex mt-10 flex-col 2xl:flex-col xl:flex-col lg:flex-col md:flex-col">
+        {/* Tab Menu For Experience */}
+        <Tabs
+          tabsOptions={["Elastik Teams", "Noggin", "Wat Consult"]}
+          activeTab={activeState}
+          setActiveTab={setActiveState}
+        />
+
+        {/* Experience Information */}
+        <div className="mt-10">
+          <Job job={showJobs(activeState)} />
         </div>
       </div>
     </div>
