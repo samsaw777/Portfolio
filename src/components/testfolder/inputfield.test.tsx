@@ -8,16 +8,21 @@ It shoukf render hello abd the name
 import { render, screen } from "@testing-library/react";
 import InputTest from "./inputfield";
 
-test("Teting the inputtest", () => {
-  render(<InputTest />);
+// Describe is used to group the tests in jest.
+describe("InputTest", () => {
+  test.only("Teting the inputtest", () => {
+    render(<InputTest />);
 
-  const element = screen.getByText(/hello/i);
-  expect(element).toBeInTheDocument();
-});
+    const element = screen.getByText(/hello/i);
+    expect(element).toBeInTheDocument();
+  });
 
-test("Testing the inputtest with name", () => {
-  render(<InputTest name="sameep" />);
+  describe("Nested", () => {
+    test.only("Testing the inputtest with name", () => {
+      render(<InputTest name="sameep" />);
 
-  const element = screen.getByText(/hello sameep/i);
-  expect(element).toBeInTheDocument();
+      const element = screen.getByText(/hello sameep/i);
+      expect(element).toBeInTheDocument();
+    });
+  });
 });
