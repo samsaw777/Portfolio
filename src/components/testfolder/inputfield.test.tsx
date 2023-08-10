@@ -16,13 +16,13 @@ describe("InputTest", () => {
     const element = screen.getByText(/hello/i);
     expect(element).toBeInTheDocument();
   });
+});
 
-  describe("Nested", () => {
-    test.only("Testing the inputtest with name", () => {
-      render(<InputTest name="sameep" />);
+describe("Nested", () => {
+  test.only("Testing the inputtest with name", () => {
+    render(<InputTest name="sameep" />);
 
-      const element = screen.getByText(/hello sameep/i);
-      expect(element).toBeInTheDocument();
-    });
+    const element = screen.getByText(/hello sameep/i);
+    expect(element).toBeInTheDocument();
   });
 });
