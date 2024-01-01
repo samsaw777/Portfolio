@@ -4,6 +4,18 @@ import { FiExternalLink } from "react-icons/fi";
 
 const element = [
   {
+    name: "LangChain - A framework to create your own Chat GPT",
+    subject:
+      "This blog explains how I created a solution for training unstructured data resembling like a chat GPT.",
+    url: "https://medium.com/@sameepsawant10/langchain-a-framework-to-create-your-own-chat-gpt-68c73dc59e54",
+  },
+  {
+    name: "The Importance of Keys in React List Components for Efficient Rendering.",
+    subject:
+      "This blog explains the importance of keys in react list components and how it helps in efficient rendering of components.",
+    url: "https://medium.com/@sameepsawant10/the-importance-of-keys-in-react-list-components-for-efficient-rendering-ed541de1aba9",
+  },
+  {
     name: "OSI (Open System Integration)",
     subject:
       "In this blog I have i explained the 7 layers of OSI model in depth. This was my blog written using HTML, CSS.",

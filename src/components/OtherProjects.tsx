@@ -4,6 +4,13 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 const Projects = [
   {
+    name: "Wordle Clone",
+    desc: "Cloned the UI/UX functionality from Wordle.",
+    stackUsed: ["React.js", "Typescript", "CSS"],
+    githubLink: "https://github.com/samsaw777/wordle_roc_assignment",
+    liveLink: "https://wordlecloneproject.vercel.app/",
+  },
+  {
     name: "AirBNB CLone",
     desc: "Created a Airbnb clone.",
     stackUsed: ["Next.js", "Tailwindcss"],
