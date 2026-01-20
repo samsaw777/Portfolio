@@ -1,7 +1,5 @@
 import React from "react";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 const Projects = [
   {
     name: "Wordle Clone",
@@ -80,58 +78,18 @@ const Projects = [
   },
 ];
 const OtherProjects = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-  });
-  const controls = useAnimation();
-  const header = useAnimation();
-  React.useEffect(() => {
-    if (inView) {
-      // controls.start({
-      //   y: 0,
-      //   opacity: 1,
-      //   transition: {
-      //     type: "spring",
-      //     duration: 1,
-      //     bounce: 0.3,
-      //   },
-      // });
-
-      controls.start((i) => ({
-        opacity: 1,
-        y: 100,
-        transition: { delay: i * 0.3 },
-      }));
-      header.start({
-        opacity: 1,
-        transition: { delay: 0.2 },
-      });
-    }
-    if (!inView) {
-      controls.start({
-        opacity: 0,
-        y: "-100vw",
-      });
-      header.start({
-        opacity: 0,
-      });
-    }
-  }, [inView]);
   return (
-    <div className="pt-20" ref={ref}>
-      <motion.div className="block text-center" animate={header}>
-        {" "}
+    <div className="pt-20">
+      <div className="block text-center">
         <span className="text-white text-2xl w-full font-black">
           Other NoteWorthy Projects
         </span>
-      </motion.div>
+      </div>
       <div className="grid grid-cols-1 2xl:grid-cols-3 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-2 gap-2 mt-5 mb-10">
         {Projects.map((project: any, key: any) => (
-          <motion.div
+          <div
             className=" group transition duration-500 ease-in-out rounded block bg-sliderColor p-5 transform hover:-translate-y-1 hover:scale-100  cursor-pointer"
             key={project.liveLink}
-            animate={controls}
-            custom={key}
           >
             <div className="flex justify-end">
               {project.githubLink && (
@@ -160,7 +118,7 @@ const OtherProjects = () => {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
     </div>

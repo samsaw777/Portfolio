@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 
 import "./navigation.css";
-function NavigationBar({ aboutme, contact, project }: any) {
-  console.log(aboutme, contact, project);
+function NavigationBar() {
   const [showacitve, setShowActive] = useState(false);
   const menuItems = [
     {
@@ -37,7 +36,6 @@ function NavigationBar({ aboutme, contact, project }: any) {
     return false;
   };
   const [activeclass, setActiveClass] = useState<string>("");
-  console.log(menuItems);
   return (
     <div className="flex">
       <nav className="flex w-full bg-navigationColor justify-between items-center pl-5 pr-5">
