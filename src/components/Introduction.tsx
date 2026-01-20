@@ -3,6 +3,7 @@ import className from "classnames";
 import Resume from "./Resume.pdf";
 import { motion, Variants } from "framer-motion";
 import Slogo from "../Images/Slogo.svg";
+import MyPhoto from "../Images/image.jpg";
 const fadeIn = (direction: "up" | "down" = "up"): Variants => {
   return {
     initial: {
@@ -54,7 +55,8 @@ function Introduction() {
   const name = "I'm Sameep,";
   const profession = "A FULL Stack Developer";
   return (
-    <div>
+    <div className="flex flex-col-reverse gap-10 2xl:flex-row xl:flex-row lg:flex-row 2xl:items-start xl:items-start lg:items-start">
+      <div className="flex-1">
       <motion.p
         variants={staggerContainer}
         initial="initial"
@@ -159,7 +161,7 @@ function Introduction() {
           }
         })}
       </motion.p>
-      <motion.p
+      {/* <motion.p
         variants={fadeSide("right")}
         initial="initial"
         animate="animate"
@@ -168,7 +170,7 @@ function Introduction() {
         I a'm a software engineering student. I like to design and develope
         Website and WebApp(using React) and also like to make them look more
         attractive.
-      </motion.p>
+      </motion.p> */}
       <motion.div
         variants={fadeIn("up")}
         initial="initial"
@@ -185,6 +187,16 @@ function Introduction() {
           Download Resume
         </a>
       </motion.div>
+      </div>
+
+      {/* Photo moved from About section */}
+      <div className="flex flex-1 justify-center 2xl:justify-center xl:justify-center lg:justify-center w-full 2xl:w-auto xl:w-auto lg:w-auto">
+        <img
+          src={MyPhoto}
+          className="w-72 h-72 rounded-full mx-auto mt-6 2xl:mt-0 xl:mt-0 lg:mt-0"
+          alt="Sameep Sawant"
+        />
+      </div>
     </div>
   );
 }
