@@ -5,6 +5,22 @@ html {
 * {
   margin: 0;
   padding: 0;
+  /* font-family: "Source Sans Pro", sans-serif; */
+  /* font-family: "Inter", sans-serif; */
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+p,
+li {
   font-family: "Source Sans Pro", sans-serif;
 }
 
