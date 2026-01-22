@@ -4,13 +4,10 @@ import IntroductionPage from "./Introduction";
 import LinkIcons from "./LinkIcons";
 import Aboutme from "./Aboutus";
 import Work from "./Work";
-
-import OtherProjects from "./OtherProjects";
 import MainProject from "./MainProject";
 import Footer from "./Footer";
 import Blog from "./Blogs";
-import FreeLancing from "./FreeLancing";
-import CurrentProject from "./CurrentProject";
+import CurrentProject from "./Education";
 
 function LandingPage() {
   return (
@@ -26,9 +23,6 @@ function LandingPage() {
             <Work />
             <CurrentProject />
             <MainProject />
-            <FreeLancing />
-
-            <OtherProjects />
             <Blog />
             <Footer />
           </div>

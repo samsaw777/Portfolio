@@ -52,11 +52,12 @@ const colors = {
     600: "#4CAF50",
     core: "#34A853",
   },
-  navigationColor: "#15191C",
-  greenTextColor: "#64ffda",
-  secondColor: "#8892b0",
-  sliderColor: "#1D2127",
-  redColor: "#EF294D",
+  navigationColor: "#0D0D0D",
+  greenTextColor: "#F9D342",
+  secondColor: "#B0B0B0",
+  sliderColor: "#1A1A1A",
+  redColor: "#F9D342",
+  mainTextColor: "#F5F5F5",
 };
 
 module.exports = {

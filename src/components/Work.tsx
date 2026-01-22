@@ -123,6 +123,8 @@ const Work = () => {
     {
       id: 1,
       companyName: "Elastik Teams",
+      company_Logo:
+        "https://media.licdn.com/dms/image/v2/C4D0BAQFvG6E2n8aRyA/company-logo_100_100/company-logo_100_100/0/1647326192992/elastik_teams_logo?e=1770854400&v=beta&t=FDMKuXg_iBkRkAC2YR9IrNdtgT0CR8UgdlIjjIH021o",
       companyLink: "https://www.elastikteams.com/",
       location: "Pune, Maharashtra, India",
       logo: "ET",
@@ -182,6 +184,7 @@ const Work = () => {
     },
     {
       id: 2,
+      company_Logo: "",
       companyName: "Noggin",
       companyLink: "https://www.noggin.so/",
       location: "Remote",
@@ -216,6 +219,8 @@ const Work = () => {
     },
     {
       id: 3,
+      company_Logo:
+        "https://media.licdn.com/dms/image/v2/C4E0BAQFSp1TCI3Ts2w/company-logo_100_100/company-logo_100_100/0/1631766971288/watconsult_logo?e=1770854400&v=beta&t=duwvBOlkWaMz_akr6rVtdH9S2oo4Z-vIhyupEQXJqzQ",
       companyName: "Wat Consult",
       companyLink: "https://www.watconsult.com/",
       location: "Mumbai, Maharashtra, India",
@@ -248,12 +253,17 @@ const Work = () => {
     },
   ];
 
-  const [expandedCompanies, setExpandedCompanies] = useState([1,2,3]);
-  const [expandedRoles, setExpandedRoles] = useState(["et-sde","et-intern","noggin-intern","wc-intern"]);
+  const [expandedCompanies, setExpandedCompanies] = useState([1, 2, 3]);
+  const [expandedRoles, setExpandedRoles] = useState([
+    "et-sde",
+    "et-intern",
+    "noggin-intern",
+    "wc-intern",
+  ]);
 
   const toggleCompanyExpand = (id: number) => {
     setExpandedCompanies((prev) =>
-      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id],
     );
   };
 
@@ -261,7 +271,7 @@ const Work = () => {
     setExpandedRoles((prev) =>
       prev.includes(roleId)
         ? prev.filter((item) => item !== roleId)
-        : [...prev, roleId]
+        : [...prev, roleId],
     );
   };
 
@@ -290,9 +300,17 @@ const Work = () => {
             <div className="p-6">
               <div className="flex gap-4">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center text-white font-black">
-                    {company.logo}
-                  </div>
+                  {company.company_Logo ? (
+                    <img
+                      src={company.company_Logo}
+                      alt={company.companyName}
+                      className="w-12 h-12 rounded-lg object-cover"
+                    />
+                  ) : (
+                    <div className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center text-secondColor font-bold text-xl">
+                      {company.logo}
+                    </div>
+                  )}
                 </div>
 
                 <div className="flex-1">
@@ -397,7 +415,7 @@ const Work = () => {
                           {expandedCompanies.includes(company.id) && (
                             <button
                               onClick={() => toggleRoleExpand(role.id)}
-                              className="mt-3 text-greenTextColor hover:text-greenTextColor text-sm font-medium flex items-center gap-1 transition-colors focus:outline-none active:outline-none"
+                              className="mt-3 text-mainTextColor hover:font-bold text-sm font-medium flex items-center gap-1 transition-colors focus:outline-none active:outline-none"
                             >
                               {expandedRoles.includes(role.id) ? (
                                 <>
@@ -471,7 +489,7 @@ const Work = () => {
           </div>
         ))}
       </div>
-{/* 
+      {/* 
       <div className="mt-6 text-center">
         <button className="text-gray-400 hover:text-greenTextColor text-sm font-medium transition-colors">
           Show all experiences →
