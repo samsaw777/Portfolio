@@ -52,12 +52,21 @@ const colors = {
     600: "#4CAF50",
     core: "#34A853",
   },
+  // Dark Mode Colors
   navigationColor: "#0D0D0D",
   greenTextColor: "#F9D342",
   secondColor: "#B0B0B0",
   sliderColor: "#1A1A1A",
   redColor: "#F9D342",
   mainTextColor: "#F5F5F5",
+  
+  // Light Mode Colors
+  lightNavigationColor: "#fff",
+  lightMainBackground: "#F5F5F5",
+  lightCardBackground: "#fff",
+  lightHeadingText: "#0D0D0D",
+  lightSubtext: "#717171",
+  lightPrimaryAccent: "#B8860B",
 };
 
 module.exports = {

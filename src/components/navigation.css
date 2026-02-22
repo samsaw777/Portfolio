@@ -4,7 +4,16 @@ nav {
   justify-content: space-around;
   min-height: 10vh;
   align-items: center;
-  background-color: #1a1919;
+  /* background-color: var(--nav-bg); */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav.theme-nav {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+:root.light-mode nav {
+  border-bottom: 1px solid #e0e0e0;
 }
 
 li {
@@ -39,10 +48,18 @@ a {
   text-decoration: none;
 }
 
+:root.light-mode a {
+  color: var(--text-secondary);
+}
+
 a:hover {
   font-weight: 700;
   color: #c4c4c4;
   text-decoration: none;
+}
+
+:root.light-mode a:hover {
+  color: var(--accent);
 }
 
 .active {
@@ -55,6 +72,32 @@ a:hover {
   font-size: 25px;
   display: none;
   cursor: pointer;
+}
+
+:root.light-mode .burger {
+  color: #0d0d0d;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 24px;
+  padding: 8px;
+  margin-left: 10px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
 }
 
 .login {
@@ -132,16 +175,26 @@ a:hover {
     left: 0;
     transform: translateX(-900px);
     padding: 20px;
-    background-color: #112240;
+    background-color: #0d0d0d;
     color: #fff;
     width: 100%;
     transition: 0.5s ease-in-out;
     z-index: 1;
   }
 
+  :root.light-mode nav .navigation-links {
+    background-color: #ffffff;
+    border-top: 1px solid #e0e0e0;
+  }
+
   li {
     padding: 20px;
     border-bottom: 1px solid #fff;
+  }
+
+  :root.light-mode li {
+    border-bottom: 1px solid #e0e0e0;
+    color: var(--text-primary);
   }
 
   li:last-of-type {

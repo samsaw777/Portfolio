@@ -12,12 +12,12 @@ import CurrentProject from "./Education";
 function LandingPage() {
   return (
     <>
-      <div className="h-viewHeight bg-navigationColor">
+      <div className="h-viewHeight" style={{ backgroundColor: "var(--bg-primary)" }}>
         <Navigation />
 
-        <div className="h-introductionHeight bg-navigationColor flex">
+        <div className="h-introductionHeight flex" style={{ backgroundColor: "var(--bg-primary)" }}>
           <LinkIcons />
-          <div className="w-mainWidth text-secondColor pt-32  overflow-scroll mx-auto 2xl:m-0 xl:m-0 lg:m-0">
+          <div className="w-mainWidth pt-32  overflow-scroll mx-auto 2xl:m-0 xl:m-0 lg:m-0" style={{ color: "var(--text-secondary)" }}>
             <IntroductionPage />
             <Aboutme />
             <Work />
@@ -26,11 +26,11 @@ function LandingPage() {
             <Blog />
             <Footer />
           </div>
-          <div className="w-sideWidth text-gray-100 2xl:flex xl:flex lg:flex md:flex flex-col hidden justify-end ">
-            <span className="text-secondColor mode mx-auto text-lg">
+          <div className="w-sideWidth text-gray-100 2xl:flex xl:flex lg:flex md:flex flex-col hidden justify-end " style={{ borderColor: "var(--border)" }}>
+            <span className="mode mx-auto text-lg" style={{ color: "var(--text-secondary)" }}>
               Sameep . Sawant . 777
             </span>
-            <div className="h-32 border-r-2 border-secondColor w-3/6 mt-3"></div>
+            <div className="h-32 border-r-2 w-3/6 mt-3" style={{ borderColor: "var(--border)" }}></div>
           </div>
         </div>
       </div>

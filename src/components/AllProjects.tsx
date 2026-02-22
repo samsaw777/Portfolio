@@ -81,12 +81,12 @@ const allProjects = [...freeLancingProjects, ...otherProjects];
 const AllProjects = () => {
   return (
     <>
-      <div className="h-viewHeight bg-navigationColor">
+      <div className="h-viewHeight" style={{ backgroundColor: "var(--bg-primary)" }}>
         <Navigation />
 
-        <div className="h-introductionHeight bg-navigationColor flex">
+        <div className="h-introductionHeight flex" style={{ backgroundColor: "var(--bg-primary)" }}>
           <LinkIcons />
-          <div className="w-mainWidth text-secondColor pt-8 overflow-scroll mx-auto 2xl:m-0 xl:m-0 lg:m-0">
+          <div className="w-mainWidth pt-8 overflow-scroll mx-auto 2xl:m-0 xl:m-0 lg:m-0" style={{ color: "var(--text-secondary)" }}>
             <div className="pt-10 mb-10">
               <div className="flex">
                 <div className="flex">

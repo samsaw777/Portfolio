@@ -46,3 +46,45 @@ li {
   height: 100vh;
   background-color: #0d0d0d;
 }
+
+/* Dark Mode Styles */
+:root.dark-mode {
+  --bg-primary: #0d0d0d;
+  --bg-secondary: #1a1a1a;
+  --text-primary: #f5f5f5;
+  --text-secondary: #b0b0b0;
+  --accent: #f9d342;
+  --card-bg: #1a1a1a;
+  --nav-bg: #0d0d0d;
+  --border: #2a2a2a;
+}
+
+/* Light Mode Styles */
+:root.light-mode {
+  --bg-primary: #f5f5f5;
+  --bg-secondary: #ffffff;
+  --text-primary: #0d0d0d;
+  --text-secondary: #717171;
+  --accent: #b8860b;
+  --card-bg: #ffffff;
+  --nav-bg: #ffffff;
+  --border: #e0e0e0;
+}
+
+/* Default to dark mode */
+:root {
+  --bg-primary: #0d0d0d;
+  --bg-secondary: #1a1a1a;
+  --text-primary: #f5f5f5;
+  --text-secondary: #b0b0b0;
+  --accent: #f9d342;
+  --card-bg: #1a1a1a;
+  --nav-bg: #0d0d0d;
+  --border: #2a2a2a;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

@@ -1,8 +1,12 @@
 import React, { useState } from "react";
+import { useTheme } from "../context/ThemeContext";
+import { MdDarkMode, MdLightMode } from "react-icons/md";
 
 import "./navigation.css";
 function NavigationBar() {
   const [showacitve, setShowActive] = useState(false);
+  const { theme, toggleTheme } = useTheme();
+  
   const menuItems = [
     {
       name: "About Me",
@@ -38,7 +42,7 @@ function NavigationBar() {
   const [activeclass, setActiveClass] = useState<string>("");
   return (
     <div className="flex">
-      <nav className="flex w-full bg-navigationColor justify-between items-center pl-5 pr-5">
+      <nav className="flex w-full bg-navigationColor justify-between items-center pl-5 pr-5 theme-nav">
         <div className="text-lg text-greenTextColor">Sameep Sawant</div>
         <ul
           className="navigation-links"
@@ -63,6 +67,18 @@ function NavigationBar() {
                         {currentUser?<button onClick={handelLogout} className='websitelogoutbtn'><span className='websitelogout'>Logout</span></button>:<Link to='/signin'><a className='login'>Login</a></Link>}
                     </li> */}
         </ul>
+        <button
+          onClick={toggleTheme}
+          className="theme-toggle"
+          aria-label="Toggle theme"
+          title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+        >
+          {theme === "dark" ? (
+            <MdLightMode size={24} />
+          ) : (
+            <MdDarkMode size={24} />
+          )}
+        </button>
         {/* <li className='inclass'>
                     {currentUser?<button onClick={handelLogout} className='websitelogoutbtn'><span className='websitelogout'>Logout</span></button>:<Link to='/signin'><a className='login'>Login</a></Link>}
                 </li> */}

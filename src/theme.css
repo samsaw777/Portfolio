@@ -1,0 +1,68 @@
+/* Theme-aware styles for all components */
+
+/* Background colors */
+:root.light-mode .bg-navigationColor {
+  background-color: var(--nav-bg);
+}
+
+:root.light-mode .bg-sliderColor {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+}
+
+/* Text colors */
+:root.light-mode .text-secondColor {
+  color: var(--text-secondary);
+}
+
+:root.light-mode .text-mainTextColor {
+  color: var(--text-primary);
+}
+
+:root.light-mode .text-greenTextColor {
+  color: var(--accent);
+}
+
+/* Card styles */
+:root.light-mode .bg-gray-800 {
+  background-color: var(--border);
+  color: var(--text-primary);
+}
+
+/* Links and hover states */
+:root.light-mode a {
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+:root.light-mode a:hover {
+  color: var(--accent);
+}
+
+/* Headings */
+:root.light-mode h1,
+:root.light-mode h2,
+:root.light-mode h3,
+:root.light-mode h4 {
+  color: var(--text-primary);
+}
+
+/* Buttons in light mode */
+:root.light-mode button {
+  color: var(--text-primary);
+}
+
+/* Borders */
+:root.light-mode [class*="border"] {
+  border-color: var(--border);
+}
+
+/* White text in light mode */
+:root.light-mode .text-white {
+  color: var(--text-primary);
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

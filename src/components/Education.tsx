@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { FiExternalLink } from "react-icons/fi";
 
 const Education = () => {
   const educationData = [
