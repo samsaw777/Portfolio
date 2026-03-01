@@ -3,7 +3,7 @@ import className from "classnames";
 import Resume from "./Resume.pdf";
 import { motion, Variants } from "framer-motion";
 import Slogo from "../Images/Slogo.svg";
-import MyPhoto from "../Images/image.jpg";
+import MyPhoto from "../Images/image.png";
 const fadeIn = (direction: "up" | "down" = "up"): Variants => {
   return {
     initial: {
