@@ -133,13 +133,11 @@ const Work = () => {
     },
   ];
 
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 1024;
   const [expandedCompanies, setExpandedCompanies] = useState([1, 2, 3]);
-  const [expandedRoles, setExpandedRoles] = useState([
-    "et-sde",
-    "et-intern",
-    "noggin-intern",
-    "wc-intern",
-  ]);
+  const [expandedRoles, setExpandedRoles] = useState<string[]>(
+    isMobile ? [] : ["et-sde", "et-intern", "noggin-intern", "wc-intern"],
+  );
 
   const toggleCompanyExpand = (id: number) => {
     setExpandedCompanies((prev) =>
@@ -267,7 +265,7 @@ const Work = () => {
                           {expandedCompanies.includes(company.id) &&
                             expandedRoles.includes(role.id) && (
                               <div className="mt-3">
-                                <ul className="space-y-4">
+                                <ul className="space-y-2 lg:space-y-4">
                                   {role.workDone.map((item, index) => (
                                     <li
                                       key={index}

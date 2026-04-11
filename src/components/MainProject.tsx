@@ -106,11 +106,11 @@ const MainProject = () => {
 
                     {/* Highlights — shown on hover/always on mobile */}
                     <div
-                      className={`mt-3 space-y-1.5 transition-all duration-300 overflow-hidden ${
+                      className={`mt-3 space-y-1.5 transition-all duration-300 overflow-hidden max-h-0 opacity-0 ${
                         hoveredId === project.id
-                          ? "max-h-40 opacity-100"
-                          : "max-h-0 opacity-0 lg:max-h-0 lg:opacity-0"
-                      } max-h-40 opacity-100 sm:max-h-40 sm:opacity-100 lg:max-h-0 lg:opacity-0`}
+                          ? "lg:max-h-40 lg:opacity-100"
+                          : "lg:max-h-0 lg:opacity-0"
+                      }`}
                       style={
                         hoveredId === project.id
                           ? { maxHeight: "160px", opacity: 1 }
