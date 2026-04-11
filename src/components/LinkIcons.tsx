@@ -1,5 +1,5 @@
 import React from "react";
-//icons array.
+
 const icons = [
   {
     name: "LinkedIn",
@@ -25,19 +25,19 @@ const icons = [
 
 const LinkIcons = () => {
   return (
-    <div className="w-sideWidth   md:block text-center hidden">
+    <div className="w-sideWidth md:block text-center hidden">
       <div className="flex flex-col h-iconsHeight justify-end">
-        {icons.map((icon: any, key: any) => (
+        {icons.map((icon) => (
           <a
             href={icon.href}
-            className="text-2xl mb-2 text-secondColor"
+            className="text-2xl mb-2 text-lightSubtext dark:text-secondColor hover:text-lightPrimaryAccent dark:hover:text-primary transition-colors duration-200"
             key={icon.name}
           >
             <i className={icon.className} aria-hidden="true"></i>
           </a>
         ))}
       </div>
-      <div className="h-32  border-r-2 border-secondColor w-3/6"></div>
+      <div className="h-32 border-r-2 border-lightBorder dark:border-secondColor w-3/6"></div>
     </div>
   );
 };

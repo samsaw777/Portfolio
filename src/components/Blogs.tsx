@@ -1,5 +1,4 @@
 import React from "react";
-
 import { FiExternalLink } from "react-icons/fi";
 
 const element = [
@@ -34,36 +33,37 @@ const element = [
     url: "https://sameepsawant.hashnode.dev/nextjs-getting-started",
   },
 ];
+
 function Blogs() {
   return (
-    <div className="block pt-32 2xl:mx-20">
-      <div className="flex">
-        <div className="2xl:text-2xl xl:text-2xl lg:text-2xl md:text-2xl text-2xl text-redColor font-black mr-2">
-          5.
-        </div>
-        <div className="2xl:text-2xl xl:text-2xl lg:text-2xl md:text-2xl text-2xl text-white font-black">
+    <div className="block pt-32">
+      <div className="flex items-center">
+        <span className="text-lightHeadingText dark:text-mainTextColor text-md sm:text-lg lg:text-2xl font-black">
+          <span className="text-lightPrimaryAccent dark:text-primary font-black text-md sm:text-lg lg:text-2xl mr-2">
+            5.
+          </span>
           Blogs Written
-        </div>
-        <div className="border-t-2 border-greenTextColor w-16 2xl:w-72 xl:w-72 lg:w-72 md:w-72 sm:w-32 h-1 my-auto ml-3 border-opacity-20"></div>
+        </span>
+        <div className="border-t-2 border-lightPrimaryAccent dark:border-primary w-16 2xl:w-72 xl:w-72 lg:w-72 md:w-72 sm:w-32 h-1 my-auto ml-3 border-opacity-20" />
       </div>
       <div className="grid grid-cols-1 2xl:grid-cols-2 xl:grid-cols-2 lg:grid-cols-2 md:grid-cols-2 gap-2 mt-5 mb-10">
         {element.map((ele) => (
           <div
-            className=" group transition duration-500 ease-in-out rounded block bg-sliderColor p-5 transform hover:-translate-y-1 hover:scale-100  cursor-pointer"
+            className="group transition duration-500 ease-in-out rounded block bg-lightCardBackground dark:bg-sliderColor p-5 transform hover:-translate-y-1 hover:scale-100 cursor-pointer"
             key={ele.url}
           >
             <div className="flex justify-end">
               {ele.url && (
-                <a href={ele.url}>
-                  <FiExternalLink className="w-5 h-5 cursor-pointer text-white" />
+                <a href={ele.url} target="_blank" rel="noopener noreferrer">
+                  <FiExternalLink className="w-5 h-5 cursor-pointer text-lightSubtext dark:text-secondColor hover:text-lightPrimaryAccent dark:hover:text-primary transition-colors" />
                 </a>
               )}
             </div>
             <div className="block mt-3">
-              <div className="text-lg text-greenTextColor font-black h-blogHeight">
+              <div className="text-base text-lightPrimaryAccent dark:text-primary font-black h-blogHeight">
                 {ele.name}
               </div>
-              <div className="text-secondColor font-black text-sm h-blogheight overflow-scroll mt-2">
+              <div className="text-lightSubtext dark:text-secondColor font-bold text-sm h-blogheight overflow-scroll mt-2">
                 {ele.subject}
               </div>
             </div>

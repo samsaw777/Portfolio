@@ -5,8 +5,7 @@ const Work = () => {
     {
       id: 1,
       companyName: "Elastik Teams",
-      company_Logo:
-        "https://media.licdn.com/dms/image/v2/C4D0BAQFvG6E2n8aRyA/company-logo_100_100/company-logo_100_100/0/1647326192992/elastik_teams_logo?e=1770854400&v=beta&t=FDMKuXg_iBkRkAC2YR9IrNdtgT0CR8UgdlIjjIH021o",
+      company_Logo: "",
       companyLink: "https://www.elastikteams.com/",
       location: "Pune, Maharashtra, India",
       logo: "ET",
@@ -101,8 +100,7 @@ const Work = () => {
     },
     {
       id: 3,
-      company_Logo:
-        "https://media.licdn.com/dms/image/v2/C4E0BAQFSp1TCI3Ts2w/company-logo_100_100/company-logo_100_100/0/1631766971288/watconsult_logo?e=1770854400&v=beta&t=duwvBOlkWaMz_akr6rVtdH9S2oo4Z-vIhyupEQXJqzQ",
+      company_Logo: "",
       companyName: "Wat Consult",
       companyLink: "https://www.watconsult.com/",
       location: "Mumbai, Maharashtra, India",
@@ -158,28 +156,27 @@ const Work = () => {
   };
 
   return (
-    <div className="pt-32 bg-gray-950 min-h-screen" id="experience">
+    <div className="pt-32 min-h-screen" id="experience">
       {/* Section heading */}
       <div className="flex items-center mb-10">
-        <span className="text-white text-md sm:text-lg lg:text-2xl font-black">
-          <span className="text-greenTextColor font-black text-md sm:text-lg lg:text-2xl mr-2">
+        <span className="text-lightHeadingText dark:text-mainTextColor text-md sm:text-lg lg:text-2xl font-black">
+          <span className="text-lightPrimaryAccent dark:text-primary font-black text-md sm:text-lg lg:text-2xl mr-2">
             2.
           </span>
           Experience
         </span>
-        <div className="border-t-2 border-greenTextColor w-16 2xl:w-72 xl:w-72 lg:w-72 md:w-72 sm:w-32 h-1 my-auto ml-3 border-opacity-20" />
+        <div className="border-t-2 border-lightPrimaryAccent dark:border-primary w-16 2xl:w-72 xl:w-72 lg:w-72 md:w-72 sm:w-32 h-1 my-auto ml-3 border-opacity-20" />
       </div>
 
       {/* Single card */}
-      <div className="bg-sliderColor rounded">
+      <div className="bg-lightCardBackground dark:bg-sliderColor rounded">
         {experiences.map((company, companyIndex) => (
           <div key={company.id}>
-            {/* ── Fix 1: divider only between companies, no stray bottom borders ── */}
-            {companyIndex > 0 && <div className="border-t border-gray-700" />}
+            {companyIndex > 0 && (
+              <div className="border-t border-lightBorder dark:border-border" />
+            )}
 
             <div className="p-3 sm:p-4 md:p-6">
-              {/* ── lg+: flex layout with logo (original) ── */}
-              {/* ── <lg: block layout, no logo (mobile version) ── */}
               <div className="flex gap-4">
                 {/* Logo — hidden on mobile, shown on lg+ */}
                 <div className="hidden lg:flex flex-shrink-0">
@@ -190,7 +187,7 @@ const Work = () => {
                       className="w-12 h-12 rounded-lg object-cover"
                     />
                   ) : (
-                    <div className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center text-secondColor font-bold text-xl">
+                    <div className="w-12 h-12 bg-lightSurfaceHover dark:bg-surface rounded-lg flex items-center justify-center text-lightSubtext dark:text-secondColor font-bold text-xl">
                       {company.logo}
                     </div>
                   )}
@@ -199,24 +196,24 @@ const Work = () => {
                 <div className="flex-1 min-w-0">
                   {/* Company name + meta */}
                   <div className="mb-3">
-                    <h3 className="text-white font-bold">
+                    <h3 className="text-lightHeadingText dark:text-mainTextColor font-bold">
                       <a
                         href={company.companyLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:text-greenTextColor transition-colors text-md md:text-lg lg:text-2xl font-bold"
+                        className="hover:text-lightPrimaryAccent dark:hover:text-primary transition-colors text-sm md:text-base lg:text-lg font-bold"
                       >
                         {company.companyName}
                       </a>
                     </h3>
                     {company.roles.length > 1 && (
-                      <p className="text-secondColor text-xs sm:text-sm lg:text-base font-bold mt-1">
+                      <p className="text-lightSubtext dark:text-secondColor text-xs sm:text-sm lg:text-sm font-bold mt-1">
                         {company.totalDuration} · {company.location}
                       </p>
                     )}
                   </div>
 
-                  {/* Roles — timeline dot/line only on lg+ */}
+                  {/* Roles */}
                   <div
                     className={
                       company.roles.length > 1 ? "lg:relative lg:pl-2" : ""
@@ -231,10 +228,10 @@ const Work = () => {
                         {company.roles.length > 1 &&
                           expandedCompanies.includes(company.id) && (
                             <>
-                              <div className="hidden lg:block absolute w-2 h-2 bg-greenTextColor rounded-full -left-6 top-2 z-10" />
+                              <div className="hidden lg:block absolute w-2 h-2 bg-lightPrimaryAccent dark:bg-primary rounded-full -left-6 top-2 z-10" />
                               {roleIndex === 0 && (
                                 <div
-                                  className="hidden lg:block absolute w-0.5 bg-gray-700"
+                                  className="hidden lg:block absolute w-0.5 bg-lightBorder dark:bg-border"
                                   style={{
                                     left: "-21px",
                                     top: "18px",
@@ -245,7 +242,7 @@ const Work = () => {
                             </>
                           )}
 
-                        {/* Role content — indent only on lg+ */}
+                        {/* Role content */}
                         <div
                           className={
                             company.roles.length > 1 &&
@@ -254,15 +251,15 @@ const Work = () => {
                               : ""
                           }
                         >
-                          <h4 className="text-white font-bold text-xs sm:text-sm lg:text-xl">
+                          <h4 className="text-lightHeadingText dark:text-mainTextColor font-bold text-xs sm:text-sm lg:text-base">
                             {role.role}
                           </h4>
-                          <p className="text-secondColor text-xs sm:text-sm lg:text-base font-bold mt-0.5">
+                          <p className="text-lightSubtext dark:text-secondColor text-xs sm:text-sm lg:text-sm font-bold mt-0.5">
                             {role.employmentType} · {role.date}
                             {role.duration && ` · ${role.duration}`}
                           </p>
                           {company.roles.length === 1 && (
-                            <p className="text-secondColor text-xs sm:text-sm lg:text-base font-bold">
+                            <p className="text-lightSubtext dark:text-secondColor text-xs sm:text-sm lg:text-sm font-bold">
                               {company.location}
                             </p>
                           )}
@@ -270,25 +267,23 @@ const Work = () => {
                           {expandedCompanies.includes(company.id) &&
                             expandedRoles.includes(role.id) && (
                               <div className="mt-3">
-                                <ul className="space-y-6">
+                                <ul className="space-y-4">
                                   {role.workDone.map((item, index) => (
                                     <li
                                       key={index}
-                                      className="flex"
+                                      className="flex items-start"
                                       style={{
                                         borderBottom: "none",
                                         borderTop: "none",
                                         margin: 0,
                                       }}
                                     >
-                                      <div>
-                                        <span className="text-greenTextColor mr-2 mt-0.5 flex-shrink-0">
-                                          •
-                                        </span>
-                                        <span className="text-secondColor text-xs sm:text-sm lg:text-lg font-bold leading-relaxed">
-                                          {item}
-                                        </span>
-                                      </div>
+                                      <span className="text-lightPrimaryAccent dark:text-primary mr-2 mt-0.5 flex-shrink-0">
+                                        •
+                                      </span>
+                                      <span className="text-lightSubtext dark:text-secondColor text-xs sm:text-sm lg:text-sm font-bold leading-relaxed">
+                                        {item}
+                                      </span>
                                     </li>
                                   ))}
                                 </ul>
@@ -296,7 +291,7 @@ const Work = () => {
                                   {role.technologies.map((tech, index) => (
                                     <span
                                       key={index}
-                                      className="text-secondColor font-black text-xs sm:text-sm lg:text-base px-3 py-1 bg-gray-800 rounded"
+                                      className="font-bold text-xs sm:text-sm lg:text-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-blue-100 dark:bg-surfaceHover text-lightHeadingText dark:text-primary transition-colors duration-200"
                                     >
                                       {tech}
                                     </span>
@@ -308,7 +303,7 @@ const Work = () => {
                           {expandedCompanies.includes(company.id) && (
                             <button
                               onClick={() => toggleRoleExpand(role.id)}
-                              className="mt-3 text-mainTextColor hover:font-bold text-xs sm:text-sm font-medium flex items-center gap-1 transition-colors focus:outline-none active:outline-none"
+                              className="mt-3 text-lightHeadingText dark:text-mainTextColor hover:text-lightPrimaryAccent dark:hover:text-primary hover:font-bold text-xs sm:text-sm font-medium flex items-center gap-1 transition-colors focus:outline-none active:outline-none"
                             >
                               {expandedRoles.includes(role.id) ? (
                                 <>
@@ -355,7 +350,7 @@ const Work = () => {
                   {!expandedCompanies.includes(company.id) && (
                     <button
                       onClick={() => toggleCompanyExpand(company.id)}
-                      className="mt-3 text-greenTextColor text-xs sm:text-sm font-medium flex items-center gap-1 transition-colors focus:outline-none active:outline-none"
+                      className="mt-3 text-lightPrimaryAccent dark:text-primary text-xs sm:text-sm font-medium flex items-center gap-1 transition-colors focus:outline-none active:outline-none"
                     >
                       Show{" "}
                       {company.roles.length > 1

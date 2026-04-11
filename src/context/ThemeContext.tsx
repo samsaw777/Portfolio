@@ -9,23 +9,19 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-// Initialize theme on document immediately
 function initializeTheme() {
   const savedTheme = (localStorage.getItem("theme") as Theme) || "dark";
   const html = document.documentElement;
-  
-  if (savedTheme === "light") {
-    html.classList.add("light-mode");
-    html.classList.remove("dark-mode");
+
+  if (savedTheme === "dark") {
+    html.classList.add("dark");
   } else {
-    html.classList.add("dark-mode");
-    html.classList.remove("light-mode");
+    html.classList.remove("dark");
   }
-  
+
   return savedTheme;
 }
 
-// Initialize theme immediately
 initializeTheme();
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
@@ -33,7 +29,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Get saved theme from localStorage
     const savedTheme = (localStorage.getItem("theme") as Theme) || "dark";
     setTheme(savedTheme);
     setMounted(true);
@@ -41,18 +36,14 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     if (!mounted) return;
-    
-    // Save theme to localStorage
+
     localStorage.setItem("theme", theme);
-    
-    // Apply theme to document
+
     const html = document.documentElement;
-    if (theme === "light") {
-      html.classList.add("light-mode");
-      html.classList.remove("dark-mode");
+    if (theme === "dark") {
+      html.classList.add("dark");
     } else {
-      html.classList.add("dark-mode");
-      html.classList.remove("light-mode");
+      html.classList.remove("dark");
     }
   }, [theme, mounted]);
 

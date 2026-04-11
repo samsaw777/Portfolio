@@ -8,7 +8,8 @@ const Education = () => {
       degree: "Master's degree, Artificial Intelligence",
       date: "Sep 2025 - May 2027",
       location: "Boston, Massachusetts, United States",
-      logo: "https://media.licdn.com/dms/image/v2/D560BAQGf9sv-x1G7uQ/company-logo_100_100/B56ZUgG4D7GsAY-/0/1740000428606/khoury_college_logo?e=1770249600&v=beta&t=PKVTkFCJg2fzscvH0qESx2RYlOf_sBz5e9zpyd0GviQ",
+      logo: "",
+      logoText: "KC",
       link: "https://www.khoury.northeastern.edu/",
       courses: ["CS5800 - Algorithms", "CS6700 - Foundations of AI"],
       skills: ["Data Structures", "Artificial Intelligence (AI)"],
@@ -19,7 +20,8 @@ const Education = () => {
       degree: "Bachelor of Engineering - BE, Information Technology",
       date: "Jul 2021 - May 2025",
       location: "Mumbai, Maharashtra, India",
-      logo: "https://media.licdn.com/dms/image/v2/C4E0BAQGsu_DimiqUow/company-logo_100_100/company-logo_100_100/0/1631357817785?e=1770249600&v=beta&t=Z5OpYKiRxOne0yPhaGS4vOHWKzWAYBuATW7lX8GWHkQ",
+      logo: "",
+      logoText: "UM",
       grade: "Grade: 9.6",
       courses: [
         "Algorithms",
@@ -48,7 +50,8 @@ const Education = () => {
       degree: "Diploma, Computer Science",
       date: "Aug 2017 - Jun 2020",
       location: "Maharashtra, India",
-      logo: "https://media.licdn.com/dms/image/v2/D560BAQHNVGSr84rClg/company-logo_100_100/company-logo_100_100/0/1704981170566?e=1770249600&v=beta&t=xiDo8bUGaYQOBrXmW64wSvRXmnU6JoD0eHCpY7j2WA4",
+      logo: "",
+      logoText: "MS",
       grade: "Grade: 93.43%",
       activities:
         "Activities and societies: I participated in Hackathon organized by the college.",
@@ -75,76 +78,76 @@ const Education = () => {
   };
 
   return (
-    <div
-      className="pt-32 px-4 2xl:px-32 xl:px-32 lg:px-32 min-h-screen bg-[#0D0D0D]"
-      id="education"
-    >
+    <div className="pt-32 min-h-screen" id="education">
       <div className="flex items-center mb-10">
-        <span className="text-[#F5F5F5] text-2xl font-black">
-          <span className="text-[#F9D342] font-black text-2xl mr-2">3.</span>
+        <span className="text-lightHeadingText dark:text-mainTextColor text-md sm:text-lg lg:text-2xl font-black">
+          <span className="text-lightPrimaryAccent dark:text-primary font-black text-md sm:text-lg lg:text-2xl mr-2">
+            3.
+          </span>
           Education
         </span>
-        <div className="border-t-2 border-[#F9D342] w-16 2xl:w-72 xl:w-72 lg:w-72 md:w-72 sm:w-32 h-1 my-auto ml-3 border-opacity-20"></div>
+        <div className="border-t-2 border-lightPrimaryAccent dark:border-primary w-16 2xl:w-72 xl:w-72 lg:w-72 md:w-72 sm:w-32 h-1 my-auto ml-3 border-opacity-20" />
       </div>
 
       {/* Single Card for All Education */}
-      <div className="bg-[#1A1A1A] rounded">
+      <div className="bg-lightCardBackground dark:bg-sliderColor rounded">
         {educationData.map((edu, eduIndex) => (
           <div key={edu.id}>
             {eduIndex > 0 && (
-              <div className="mx-4 border-t border-[#F9D342] border-opacity-20"></div>
+              <div className="mx-4 border-t border-lightBorder dark:border-border" />
             )}
-            <div className="p-6">
+            <div className="p-3 sm:p-4 md:p-6">
               <div className="flex gap-4">
-                <div className="flex-shrink-0 pt-2">
-                  <img
-                    src={edu.logo}
-                    alt={edu.institution}
-                    className="w-12 h-12 object-cover"
-                  />
+                <div className="hidden lg:flex flex-shrink-0 pt-2">
+                  <div className="w-12 h-12 bg-lightSurfaceHover dark:bg-surface rounded-lg flex items-center justify-center text-lightSubtext dark:text-secondColor font-bold text-xl">
+                    {edu.logoText}
+                  </div>
                 </div>
 
                 <div className="flex-1">
-                  <h3 className="font-black text-4xl">
+                  <h3 className="font-bold">
                     {edu.link ? (
                       <a
                         href={edu.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[#F5F5F5] hover:text-[#F9D342] font-bold transition-colors"
+                        className="text-lightHeadingText dark:text-mainTextColor hover:text-lightPrimaryAccent dark:hover:text-primary font-bold transition-colors text-sm md:text-base lg:text-lg"
                       >
                         {edu.institution}
                       </a>
                     ) : (
-                      <a href="/" className="text-[#F5F5F5] font-bold">
+                      <span className="text-lightHeadingText dark:text-mainTextColor font-bold text-sm md:text-base lg:text-lg">
                         {edu.institution}
-                      </a>
+                      </span>
                     )}
                   </h3>
-                  <p className="text-[#D0D0D0] text-xl font-bold mt-2">
+                  <p className="text-lightSubtext dark:text-secondColor text-xs sm:text-sm lg:text-base font-bold mt-1">
                     {edu.degree}
                   </p>
-                  <p className="text-[#B0B0B0] text-sm mt-1">{edu.date}</p>
-                  {/* <p className="text-white text-sm font-bold">{edu.location}</p> */}
+                  <p className="text-lightSubtext dark:text-secondColor text-xs sm:text-sm lg:text-sm mt-1">
+                    {edu.date}
+                  </p>
 
                   {expandedEducation.includes(edu.id) && (
                     <div className="mt-1">
                       {edu.grade && (
-                        <p className="text-[#B0B0B0] text-sm">{edu.grade}</p>
+                        <p className="text-lightSubtext dark:text-secondColor text-xs sm:text-sm lg:text-sm">
+                          {edu.grade}
+                        </p>
                       )}
 
                       {edu.activities && (
-                        <p className="text-[#B0B0B0] text-sm font-bold mt-2">
+                        <p className="text-lightSubtext dark:text-secondColor text-xs sm:text-sm lg:text-sm font-bold mt-2">
                           {edu.activities}
                         </p>
                       )}
 
                       {edu.courses && (
                         <div className="mt-3">
-                          <p className="text-[#F5F5F5] text-sm font-semibold">
+                          <p className="text-lightHeadingText dark:text-mainTextColor text-xs sm:text-sm lg:text-sm font-semibold">
                             Relevant Coursework:
                           </p>
-                          <p className="text-[#B0B0B0] text-sm mt-1">
+                          <p className="text-lightSubtext dark:text-secondColor text-xs sm:text-sm lg:text-sm mt-1">
                             {edu.courses.join(" , ")}
                           </p>
                         </div>
@@ -152,17 +155,15 @@ const Education = () => {
 
                       {edu.skills && (
                         <div className="mt-3">
-                          <div className="flex items-start gap-2">
-                            <div className="flex flex-wrap gap-2">
-                              {edu.skills.map((skill, index) => (
-                                <span
-                                  key={index}
-                                  className="text-secondColor font-black text-sm px-3 py-2 bg-gray-800 rounded"
-                                >
-                                  {skill}
-                                </span>
-                              ))}
-                            </div>
+                          <div className="flex flex-wrap gap-2">
+                            {edu.skills.map((skill, index) => (
+                              <span
+                                key={index}
+                                className="font-bold text-xs sm:text-sm lg:text-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-blue-100 dark:bg-surfaceHover text-lightHeadingText dark:text-primary transition-colors duration-200"
+                              >
+                                {skill}
+                              </span>
+                            ))}
                           </div>
                         </div>
                       )}
@@ -172,9 +173,9 @@ const Education = () => {
                           {edu.projects.map((project, index) => (
                             <div key={index} className="flex gap-3">
                               <div className="flex-shrink-0 mt-1">
-                                <div className="w-8 h-8 bg-gray-700 rounded flex items-center justify-center">
+                                <div className="w-8 h-8 bg-lightSurfaceHover dark:bg-surface rounded flex items-center justify-center">
                                   <svg
-                                    className="w-4 h-4 text-gray-400"
+                                    className="w-4 h-4 text-lightSubtext dark:text-secondColor"
                                     fill="none"
                                     stroke="currentColor"
                                     viewBox="0 0 24 24"
@@ -188,39 +189,6 @@ const Education = () => {
                                   </svg>
                                 </div>
                               </div>
-                              {/* <div className="flex-1">
-                                <h4 className="text-white font-bold text-sm">
-                                  {project && project.link ? (
-                                    <a
-                                      href={project.link}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      className="hover:text-greenTextColor transition-colors"
-                                    >
-                                      {project.name}
-                                    </a>
-                                  ) : (
-                                    project.name
-                                  )}
-                                </h4>
-                                {project.description && (
-                                  <p className="text-secondColor text-sm font-bold mt-1">
-                                    {project.description}
-                                  </p>
-                                )}
-                              </div> */}
-                              {/* {project.link && (
-                                <div className="flex-shrink-0">
-                                  <a
-                                    href={project.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-white hover:text-greenTextColor transition-colors"
-                                  >
-                                    <FiExternalLink className="w-4 h-4" />
-                                  </a>
-                                </div>
-                              )} */}
                             </div>
                           ))}
                         </div>
@@ -230,7 +198,7 @@ const Education = () => {
 
                   <button
                     onClick={() => toggleEducationExpand(edu.id)}
-                    className="mt-3 text-mainTextColor hover:font-bold text-sm font-medium flex items-center gap-1 transition-colors focus:outline-none active:outline-none"
+                    className="mt-3 text-lightHeadingText dark:text-mainTextColor hover:text-lightPrimaryAccent dark:hover:text-primary hover:font-bold text-xs sm:text-sm font-medium flex items-center gap-1 transition-colors focus:outline-none active:outline-none"
                   >
                     {expandedEducation.includes(edu.id) ? (
                       <>

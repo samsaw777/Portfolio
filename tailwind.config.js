@@ -52,26 +52,44 @@ const colors = {
     600: "#4CAF50",
     core: "#34A853",
   },
-  // Dark Mode Colors
-  navigationColor: "#0D0D0D",
-  greenTextColor: "#F9D342",
-  secondColor: "#B0B0B0",
-  sliderColor: "#1A1A1A",
-  redColor: "#F9D342",
-  mainTextColor: "#F5F5F5",
-  
-  // Light Mode Colors
-  lightNavigationColor: "#fff",
-  lightMainBackground: "#F5F5F5",
-  lightCardBackground: "#fff",
-  lightHeadingText: "#0D0D0D",
-  lightSubtext: "#717171",
-  lightPrimaryAccent: "#B8860B",
+
+  // ── Dark Mode (default) ──
+  navigationColor: "#0C0F14",
+  greenTextColor: "#5B8DEF", // primary accent (was yellow #F9D342)
+  secondColor: "#6B7A94", // muted text
+  sliderColor: "#14181F", // surface/card bg
+  redColor: "#5B8DEF", // accent (was yellow #F9D342)
+  mainTextColor: "#E8ECF4", // primary text
+
+  // ── Light Mode ──
+  lightNavigationColor: "#FFFFFF",
+  lightMainBackground: "#F4F6FA",
+  lightCardBackground: "#FFFFFF",
+  lightHeadingText: "#1A1F2E",
+  lightSubtext: "#6B7A94",
+  lightPrimaryAccent: "#3D6BC7",
+
+  // ── Scheme 2: Cool & Minimal palette tokens ──
+  primary: "#5B8DEF",
+  primaryHover: "#7BA4F7",
+  secondary: "#3D6BC7",
+  surface: "#14181F",
+  surfaceHover: "#1A1F28",
+  border: "#1E2430",
+  active: "#4A7ADE",
+
+  lightPrimary: "#3D6BC7",
+  lightPrimaryHover: "#4A7ADE",
+  lightSecondary: "#2B52A0",
+  lightSurface: "#FFFFFF",
+  lightSurfaceHover: "#FFFFFf",
+  lightBorder: "#DFE3EC",
+  lightActive: "#2B52A0",
 };
 
 module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: "class",
   theme: {
     colors,
     extend: {
@@ -111,8 +129,3 @@ module.exports = {
   },
   plugins: [],
 };
-
-// newSLiderColor = #1D2127
-// oldSliderColor = #112240
-// newNavigationColor = #15191C
-//oldNavigationColor = #0A192F
