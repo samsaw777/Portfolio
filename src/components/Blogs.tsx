@@ -60,10 +60,10 @@ function Blogs() {
               )}
             </div>
             <div className="block mt-3">
-              <div className="text-base text-lightPrimaryAccent dark:text-primary font-black h-blogHeight">
+              <div className="text-base text-lightPrimaryAccent dark:text-primary font-black lg:h-blogHeight">
                 {ele.name}
               </div>
-              <div className="text-lightSubtext dark:text-secondColor font-bold text-sm h-blogheight overflow-scroll mt-2">
+              <div className="text-lightSubtext dark:text-secondColor font-bold text-sm lg:h-blogheight lg:overflow-scroll mt-2">
                 {ele.subject}
               </div>
             </div>
