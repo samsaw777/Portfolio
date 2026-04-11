@@ -9,6 +9,51 @@ const allProjects = [
   {
     id: 1,
     number: "01",
+    title: "Workify - Project Management Tool",
+    description:
+      "Full-stack project management application with JWT-based authentication, Google OAuth2, drag-and-drop task boards, real-time updates, and calendar-based deadline tracking.",
+    highlights: [
+      "Drag-and-drop task boards with react-beautiful-dnd",
+      "Real-time updates using Socket.io",
+      "Calendar-based deadline tracking with react-big-calendar",
+    ],
+    skills: ["Next.js", "TypeScript", "TailwindCSS", "Socket.io", "Prisma"],
+    github: "https://github.com/samsaw777/workifytaskmanager/tree/main",
+    demo: "https://example.com",
+  },
+  {
+    id: 2,
+    number: "02",
+    title: "Remote First Work Tracker",
+    description:
+      "Tracking software to monitor daily activities in an organization. Create groups, add members, and track each user's progress in real time.",
+    highlights: [
+      "Google authentication with secure session management",
+      "Real-time chat functionality between team members",
+      "Kanban-style to-do section for task tracking",
+    ],
+    skills: ["React", "Node.js", "Express", "Firestore", "Redux"],
+    github: "https://github.com/samsaw777/Remote-First-Work-Tracker",
+    demo: "https://remoteworktracker.netlify.app/",
+  },
+  {
+    id: 3,
+    number: "03",
+    title: "Ganpati Booking Website",
+    description:
+      "Client project with dual user/admin panels. Users can book Ganpati murti online through a streamlined booking flow.",
+    highlights: [
+      "Dual panel system for users and administrators",
+      "Online booking with Google authentication",
+      "Responsive design with smooth animations",
+    ],
+    skills: ["React", "Firebase", "AOS", "Bootstrap"],
+    github: "https://github.com/samsaw777/GanpatiWebiteUer",
+    demo: "https://shreeganeshaarts.web.app/",
+  },
+  {
+    id: 4,
+    number: "04",
     title: "Khurana Coals",
     description: "Khurana Coals is a website build for a coal mining company.",
     highlights: [
@@ -20,8 +65,8 @@ const allProjects = [
     demo: "https://khuranacoal.com/",
   },
   {
-    id: 2,
-    number: "02",
+    id: 5,
+    number: "05",
     title: "Wordle Clone",
     description: "Cloned the UI/UX functionality from Wordle.",
     highlights: [
@@ -33,8 +78,8 @@ const allProjects = [
     demo: "https://wordlecloneproject.vercel.app/",
   },
   {
-    id: 3,
-    number: "03",
+    id: 6,
+    number: "06",
     title: "AirBNB Clone",
     description: "Created an Airbnb clone with Next.js.",
     highlights: [
@@ -46,8 +91,8 @@ const allProjects = [
     demo: "https://samsawairbnbclone.vercel.app/",
   },
   {
-    id: 4,
-    number: "04",
+    id: 7,
+    number: "07",
     title: "Covid Tracker",
     description:
       "Covid tracker to view global case numbers with detailed analysis using statistics, with a dedicated India section.",
@@ -60,8 +105,8 @@ const allProjects = [
     demo: "https://covid-19-project-361da.web.app/",
   },
   {
-    id: 5,
-    number: "05",
+    id: 8,
+    number: "08",
     title: "Work It",
     description:
       "An application where users can select a place on the map, mark it, and add notes about what to do there.",
@@ -74,8 +119,8 @@ const allProjects = [
     demo: "https://markmeprojec.web.app/",
   },
   {
-    id: 6,
-    number: "06",
+    id: 9,
+    number: "09",
     title: "Travello Quizz",
     description: "A quiz application developed using PHP.",
     highlights: ["Dynamic quiz generation", "PHP backend with score tracking"],
@@ -83,8 +128,8 @@ const allProjects = [
     github: "https://github.com/samsaw777/Qizz-HTMl-CSS-JS-PHP-",
   },
   {
-    id: 7,
-    number: "07",
+    id: 10,
+    number: "10",
     title: "RMS Group",
     description:
       "Cross-platform app developed in the final year of Diploma. Features include Feedback System, Recruitment System, and Tracking System.",
@@ -95,8 +140,8 @@ const allProjects = [
     skills: ["React-Native", "Node.js", "Express.js", "MongoDB"],
   },
   {
-    id: 8,
-    number: "08",
+    id: 11,
+    number: "11",
     title: "Search By Assignment",
     description: "First assignment developed using Typescript with React.",
     highlights: [
@@ -108,8 +153,8 @@ const allProjects = [
     demo: "https://typescriptreact.netlify.app/",
   },
   {
-    id: 9,
-    number: "09",
+    id: 12,
+    number: "12",
     title: "Space Invader",
     description: "Space Invader is a game developed using Python.",
     highlights: [
@@ -120,8 +165,8 @@ const allProjects = [
     github: "https://github.com/samsaw777/Test_My_Knowledge",
   },
   {
-    id: 10,
-    number: "10",
+    id: 13,
+    number: "13",
     title: "Lucid Themes",
     description: "A responsive website built while learning web development.",
     highlights: [

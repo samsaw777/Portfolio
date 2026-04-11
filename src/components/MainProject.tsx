@@ -6,48 +6,57 @@ const MainProject = () => {
   const projectsData = [
     {
       id: 1,
-      number: "01",
-      title: "Remote First Work Tracker",
+      number: "03",
+      title: "APDP – Agentic Pharmacological Data Platform",
       description:
-        "Tracking software to monitor daily activities in an organization. Create groups, add members, and track each user's progress in real time.",
+        "Natural language interface for querying drug-food, drug-herb, and drug-drug interactions. Features a multi-node agentic pipeline with human-in-the-loop clarification, smart caching, and structured clinical-style responses.",
       highlights: [
-        "Google authentication with secure session management",
-        "Real-time chat functionality between team members",
-        "Kanban-style to-do section for task tracking",
+        "LangGraph agentic pipeline with 11 specialized nodes",
+        "Human-in-the-loop clarification for ambiguous queries",
+        "Hybrid NLP + parameterized SQL — no LLM-generated SQL",
       ],
-      skills: ["React", "Node.js", "Express", "Firestore", "Redux"],
-      github: "https://github.com/samsaw777/Remote-First-Work-Tracker",
-      demo: "https://remoteworktracker.netlify.app/",
+      skills: [
+        "Next.js",
+        "FastAPI",
+        "LangGraph",
+        "Gemini",
+        "Supabase",
+        "Docker",
+      ],
+      github: "https://github.com/samsaw777/drug_detection_rag_chatbot_backend",
+      demo: "https://drug-detection-rag-chatbot-frontend.vercel.app/",
     },
     {
       id: 2,
       number: "02",
-      title: "Ganpati Booking Website",
+      title: "Amazon Review Sentiment Analyzer",
       description:
-        "Client project with dual user/admin panels. Users can book Ganpati murti online through a streamlined booking flow.",
+        "FastAPI backend that processes e-commerce product reviews and generates AI-based summaries, sentiment insights, and key pros/cons through structured REST APIs.",
       highlights: [
-        "Dual panel system for users and administrators",
-        "Online booking with Google authentication",
-        "Responsive design with smooth animations",
+        "AI-powered sentiment analysis and summarization",
+        "LLM pipelines built with LangChain",
+        "LangSmith monitoring for latency, tokens, and cost",
       ],
-      skills: ["React", "Firebase", "AOS", "Bootstrap"],
-      github: "https://github.com/samsaw777/GanpatiWebiteUer",
-      demo: "https://shreeganeshaarts.web.app/",
+      skills: ["FastAPI", "Python", "LangChain", "LangSmith", "LLMs"],
+      github:
+        "https://github.com/samsaw777/reviews_analysis_web_extension_backend",
+      // demo: "https://example.com",
     },
     {
       id: 3,
       number: "03",
-      title: "AI Content Generator",
+      title: "Mood-Based Music Recommendation System",
       description:
-        "Intelligent content generation tool powered by OpenAI. Create high-quality blog and social media content with multiple templates and tone variations.",
+        "Multi-model music recommendation pipeline that predicts continuous arousal–valence emotion embeddings from audio and computes cosine-similarity-based Top-K song recommendations.",
       highlights: [
-        "AI-powered content generation with GPT",
-        "Multiple templates for different content types",
-        "Customizable tone and style settings",
+        "Audio preprocessing and regression model for mood prediction",
+        "Continuous arousal–valence emotion embeddings",
+        "Cosine-similarity ranking with genre and instrument vectors",
       ],
-      skills: ["React", "TypeScript", "Node.js", "OpenAI"],
-      github: "https://github.com",
-      demo: "https://example.com",
+      skills: ["Python", "PyTorch", "Librosa"],
+      github:
+        "https://github.com/NirzariP/Music-Classification-and-Recommendation-System",
+      // demo: "https://example.com",
     },
   ];
 
